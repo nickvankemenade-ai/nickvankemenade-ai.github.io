@@ -1,1 +1,166 @@
 
+/* ================================
+   Global Styles
+   ================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #f9f9f9;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+/* ================================
+   Headings
+   ================================ */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+/* ================================
+   Navigation
+   ================================ */
+nav {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #0b47a1;
+}
+
+/* ================================
+   Sections
+   ================================ */
+section {
+    margin-bottom: 60px;
+}
+
+section p {
+    margin: 15px 0;
+    font-size: 1.05rem;
+}
+
+/* ================================
+   Lists
+   ================================ */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    background: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-left: 4px solid #1a73e8;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* ================================
+   Links & Buttons
+   ================================ */
+a {
+    color: #1a73e8;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #0b47a1;
+    text-decoration: underline;
+}
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0b47a1;
+}
+
+/* ================================
+   Images
+   ================================ */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* ================================
+   Footer / Socials
+   ================================ */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* ================================
+   Responsive
+   ================================ */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
