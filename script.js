@@ -1,44 +1,36 @@
 const timelineItems = [
   {
     year: "2026",
-    title: "Placeholder milestone",
-    body: "A recent milestone reserved for a role change, publication, launch, or comparable event.",
-    tags: ["placeholder", "milestone", "research"],
-    group: "recent",
-  },
-  {
-    year: "2025",
-    title: "Project iteration",
-    body: "An iterative phase in which the model, data pipeline, or evaluation approach was refined.",
+    title: "Experimentation with autoencoder models and LDMs",
+    body: "Experimentation with concepts such as contrastive latent training and the use of autoencoder-based latent spaces for motion prediction, latent diffusion models, and related ideas.",
     tags: ["experiment", "iteration"],
     group: "recent",
   },
   {
-    year: "2024",
-    title: "Featured project work",
-    body: "A research-heavy period in which one of the core projects became presentation-ready.",
+    year: "2025",
+    title: "COBI project",
+    body: "Proposition to implement object detection in FRC. Development of an Edge-TPU optimized model family: COBI.",
     tags: ["project", "featured"],
     group: "mid",
   },
   {
-    year: "2023",
-    title: "Research foundation",
-    body: "A foundational period focused on literature review, prototyping, and infrastructure setup.",
+    year: "2025",
+    title: "Development of the RTGU",
+    body: "A significant research phase focused on the improvement of recurrent network architectures, resulting in the RTGU model.",
     tags: ["foundation", "research"],
     group: "mid",
   },
   {
-    year: "2022",
-    title: "New direction",
+    year: "2024",
+    title: "First CNN models and experiments on toy datasets such as MNIST and CIFAR-10.",
     body: "A transition point in which the work moved toward a more machine-learning-centric direction.",
     tags: ["direction", "transition"],
     group: "mid",
   },
   {
-    year: "2021",
-    title: "Earlier stage milestone",
-    body: "An earlier entry that can later be mapped to study, laboratory work, or a project stage.",
-    tags: ["earlier", "placeholder"],
+    year: "2023",
+    title: "Starting point",
+    body: "My introduction to machine learning through coursework, small projects, and exploration of the field.",
     group: "early",
   },
 ];
@@ -125,10 +117,6 @@ function renderCarousel() {
 function renderTimelineFilters() {
   if (!timelineFilters) return;
   const groups = [
-    { id: "all", label: "All" },
-    { id: "recent", label: "Recent" },
-    { id: "mid", label: "Mid" },
-    { id: "early", label: "Early" },
   ];
 
   timelineFilters.innerHTML = "";
