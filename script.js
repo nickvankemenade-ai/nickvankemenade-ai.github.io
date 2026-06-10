@@ -1,6 +1,4 @@
-const timelineItems = [
 
-];
 
 const researchProjects = [
   {
@@ -33,13 +31,9 @@ const carouselSlides = [...document.querySelectorAll("[data-slide]")];
 const carouselDots = document.querySelector("[data-carousel-dots]");
 const carouselPrev = document.querySelector("[data-carousel-prev]");
 const carouselNext = document.querySelector("[data-carousel-next]");
-const timelineList = document.querySelector("[data-timeline-list]");
-const timelineFilters = document.querySelector("[data-timeline-filters]");
-const timelineDetail = document.querySelector("[data-timeline-detail]");
 const researchGrid = document.querySelector("[data-research-grid]");
 
 let activeSlide = 0;
-let activeTimeline = 0;
 let activeFilter = "all";
 
 function setActiveSlide(index) {
@@ -73,77 +67,7 @@ function renderCarousel() {
   setActiveSlide(0);
 }
 
-function renderTimelineFilters() {
-  if (!timelineFilters) return;
-  const groups = [
-  ];
 
-  timelineFilters.innerHTML = "";
-  groups.forEach((group) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `chip${group.id === activeFilter ? " is-active" : ""}`;
-    button.textContent = group.label;
-    button.addEventListener("click", () => {
-      activeFilter = group.id;
-      activeTimeline = 0;
-      renderTimelineFilters();
-      renderTimelineList();
-    });
-    timelineFilters.appendChild(button);
-  });
-}
-
-function renderTimelineDetail(item) {
-  if (!timelineDetail) return;
-  const title = timelineDetail.querySelector("[data-detail-title]");
-  const year = timelineDetail.querySelector("[data-detail-year]");
-  const body = timelineDetail.querySelector("[data-detail-body]");
-  const tags = timelineDetail.querySelector("[data-detail-tags]");
-
-  title.textContent = item.title;
-  year.textContent = item.year;
-  body.textContent = item.body;
-  tags.innerHTML = "";
-  item.tags.forEach((tag) => {
-    const tagEl = document.createElement("span");
-    tagEl.className = "badge muted";
-    tagEl.textContent = tag;
-    tags.appendChild(tagEl);
-  });
-}
-
-function renderTimelineList() {
-  if (!timelineList) return;
-
-  const items = activeFilter === "all"
-    ? timelineItems
-    : timelineItems.filter((item) => item.group === activeFilter);
-
-  timelineList.innerHTML = "";
-
-  items.forEach((item, index) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `timeline-item${index === activeTimeline ? " is-active" : ""}`;
-    button.innerHTML = `
-      <span class="timeline-year">${item.year}</span>
-      <strong class="timeline-title">${item.title}</strong>
-      <span class="lead">${item.body}</span>
-    `;
-    button.addEventListener("click", () => {
-      activeTimeline = index;
-      renderTimelineList();
-      renderTimelineDetail(item);
-    });
-    timelineList.appendChild(button);
-  });
-
-  if (items.length) {
-    const selected = items[Math.min(activeTimeline, items.length - 1)];
-    renderTimelineDetail(selected);
-  }
-}
 
 function renderResearch() {
   if (!researchGrid) return;
@@ -205,7 +129,5 @@ function renderContact() {
 }
 
 renderCarousel();
-renderTimelineFilters();
-renderTimelineList();
 renderResearch();
 renderContact();
