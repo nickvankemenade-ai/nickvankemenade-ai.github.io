@@ -3,28 +3,28 @@ const timelineItems = [
     year: "2026",
     title: "Experimentation with autoencoder models and LDMs",
     body: "Experimentation with concepts such as contrastive latent training and the use of autoencoder-based latent spaces for motion prediction, latent diffusion models, and related ideas.",
-    tags: ["experiment", "iteration"],
+
     group: "recent",
   },
   {
     year: "2025",
     title: "COBI project",
     body: "Proposition to implement object detection in FRC. Development of an Edge-TPU optimized model family: COBI.",
-    tags: ["project", "featured"],
+
     group: "mid",
   },
   {
     year: "2025",
     title: "Development of the RTGU",
     body: "A significant research phase focused on the improvement of recurrent network architectures, resulting in the RTGU model.",
-    tags: ["foundation", "research"],
+
     group: "mid",
   },
   {
     year: "2024",
     title: "First CNN models and experiments on toy datasets such as MNIST and CIFAR-10.",
     body: "A transition point in which the work moved toward a more machine-learning-centric direction.",
-    tags: ["direction", "transition"],
+
     group: "mid",
   },
   {
