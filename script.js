@@ -2,42 +2,42 @@ const timelineItems = [
   {
     year: "2026",
     title: "Placeholder milestone",
-    body: "A recent project milestone that can later be replaced with a real event, role change, publication, or launch.",
+    body: "A recent milestone reserved for a role change, publication, launch, or comparable event.",
     tags: ["placeholder", "milestone", "research"],
     group: "recent",
   },
   {
     year: "2025",
     title: "Project iteration",
-    body: "An experimental phase where the model, data, or evaluation workflow got materially better.",
+    body: "An iterative phase in which the model, data pipeline, or evaluation approach was refined.",
     tags: ["experiment", "iteration"],
     group: "recent",
   },
   {
     year: "2024",
     title: "Featured project work",
-    body: "A research-heavy year where one of the key projects took shape and became showcase-worthy.",
+    body: "A research-heavy period in which one of the core projects became presentation-ready.",
     tags: ["project", "featured"],
     group: "mid",
   },
   {
     year: "2023",
     title: "Research foundation",
-    body: "The groundwork period: reading, prototyping, and setting up the systems that later paid off.",
+    body: "A foundational period focused on literature review, prototyping, and infrastructure setup.",
     tags: ["foundation", "research"],
     group: "mid",
   },
   {
     year: "2022",
     title: "New direction",
-    body: "A point where the work shifted toward a more machine-learning-centric and engineering-aware direction.",
+    body: "A transition point in which the work moved toward a more machine-learning-centric direction.",
     tags: ["direction", "transition"],
     group: "mid",
   },
   {
     year: "2021",
     title: "Earlier stage milestone",
-    body: "An earlier entry that can later map to study, lab work, or an important project stage.",
+    body: "An earlier entry that can later be mapped to study, laboratory work, or a project stage.",
     tags: ["earlier", "placeholder"],
     group: "early",
   },
@@ -47,15 +47,15 @@ const researchProjects = [
   {
     title: "RTGU",
     summary:
-      "Architecture-focused work with visual documentation centered on the model structure and supporting plots.",
+      "Architecture-focused work documented through the model structure and supporting visual material.",
     status: "Featured",
     linkLabel: "Paper link",
-    linkHref: "#",
+    linkHref: "https://zenodo.org/records/20618403",
   },
   {
     title: "COBI",
     summary:
-      "Representation and motion-focused work with a short clip plus learned-representation visuals.",
+      "Representation and motion-focused work combining a short clip with learned-representation visuals.",
     status: "Featured",
     linkLabel: "Paper link",
     linkHref: "#",
@@ -63,7 +63,7 @@ const researchProjects = [
   {
     title: "AE",
     summary:
-      "An active project currently in progress, already represented by the trajectory visualization.",
+      "An active project currently in progress, represented here by the trajectory visualization.",
     status: "In progress",
     linkLabel: "Paper link",
     linkHref: "#",
@@ -71,7 +71,7 @@ const researchProjects = [
   {
     title: "Additional project",
     summary:
-      "Use this slot for another research project and replace the placeholder paper link when ready.",
+      "Use this slot for another research project and replace the placeholder paper link when available.",
     status: "Placeholder",
     linkLabel: "Paper link",
     linkHref: "#",
@@ -221,7 +221,44 @@ function renderResearch() {
   });
 }
 
+function renderContact() {
+  const contactMap = [
+    {
+      selector: '[aria-label="LinkedIn placeholder"]',
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/nick-van-kemenade-49bb2a37a",
+    },
+    {
+      selector: '[aria-label="GitHub placeholder"]',
+      label: "GitHub",
+      href: "https://github.com/nickvankemenade-ai",
+    },
+    {
+      selector: '[aria-label="Zenodo placeholder"]',
+      label: "Zenodo",
+      href: "https://zenodo.org/records/20618403",
+    },
+    {
+      selector: '[aria-label="Mail placeholder"]',
+      label: "Mail",
+      href: "mailto:nick.vk.ai@gmail.com",
+    },
+  ];
+
+  contactMap.forEach(({ selector, label, href }) => {
+    const card = document.querySelector(selector);
+    if (!card) return;
+    card.innerHTML = `
+      <a class="contact-card-link" href="${href}">
+        <span>${label}</span>
+        <small>${href.startsWith("mailto:") ? "Email contact" : "External profile"}</small>
+      </a>
+    `;
+  });
+}
+
 renderCarousel();
 renderTimelineFilters();
 renderTimelineList();
 renderResearch();
+renderContact();
