@@ -1,38 +1,5 @@
 const timelineItems = [
-  {
-    year: "2026",
-    title: "Experimentation with autoencoder models and LDMs",
-    body: "Experimentation with concepts such as contrastive latent training and the use of autoencoder-based latent spaces for motion prediction, latent diffusion models, and related ideas.",
 
-    group: "recent",
-  },
-  {
-    year: "2025",
-    title: "COBI project",
-    body: "Proposition to implement object detection in FRC. Development of an Edge-TPU optimized model family: COBI.",
-
-    group: "mid",
-  },
-  {
-    year: "2025",
-    title: "Development of the RTGU",
-    body: "A significant research phase focused on the improvement of recurrent network architectures, resulting in the RTGU model.",
-
-    group: "mid",
-  },
-  {
-    year: "2024",
-    title: "First CNN models and experiments on toy datasets such as MNIST and CIFAR-10.",
-    body: "A transition point in which the work moved toward a more machine-learning-centric direction.",
-
-    group: "mid",
-  },
-  {
-    year: "2023",
-    title: "Starting point",
-    body: "My introduction to machine learning through coursework, small projects, and exploration of the field.",
-    group: "early",
-  },
 ];
 
 const researchProjects = [
@@ -59,15 +26,7 @@ const researchProjects = [
     status: "In progress",
     linkLabel: "Paper link",
     linkHref: "#",
-  },
-  {
-    title: "Additional project",
-    summary:
-      "Use this slot for another research project and replace the placeholder paper link when available.",
-    status: "Placeholder",
-    linkLabel: "Paper link",
-    linkHref: "#",
-  },
+  }
 ];
 
 const carouselSlides = [...document.querySelectorAll("[data-slide]")];
