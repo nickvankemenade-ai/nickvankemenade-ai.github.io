@@ -75,7 +75,7 @@ main {
   padding: 18px 22px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(9, 17, 22, 0.72);
+  background: rgba(10, 10, 10, 0.86);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
   position: sticky;
@@ -224,7 +224,7 @@ h1 {
 .site-nav a:focus-visible {
   transform: translateY(-1px);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(93, 212, 185, 0.18);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18);
 }
 
 .carousel-section,
@@ -465,13 +465,13 @@ h1 {
   bottom: 20px;
   width: 3px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--accent), rgba(93, 212, 185, 0.3));
-  opacity: 0.5;
+  background: linear-gradient(180deg, #f8f8f8, rgba(255, 255, 255, 0.25));
+  opacity: 0.7;
 }
 
 .timeline-item.is-active {
-  border-color: rgba(93, 212, 185, 0.45);
-  background: rgba(93, 212, 185, 0.08);
+  border-color: rgba(255, 255, 255, 0.48);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .timeline-year {
