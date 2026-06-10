@@ -1,1 +1,95 @@
-<h1>TEST LOAD</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Portfolio</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1>Nick</h1>
+      <p class="subtitle">Machine Learning Scientist & Engineer</p>
+      <p class="desc">
+        Developing efficient neural architectures, representation learning methods, and intelligent systems.
+      </p>
+    </div>
+  </header>
+
+  <!-- FEATURED CAROUSEL -->
+  <section class="carousel-section">
+    <h2>Featured Work</h2>
+
+    <div class="carousel" id="carousel">
+
+      <!-- RTGU -->
+      <div class="card active" data-index="0">
+        <div class="media">
+          <img src="assets/artifacts/rtgu/image2.png" />
+        </div>
+        <h3>RTGU</h3>
+        <p>Neural layer architecture for temporal computation.</p>
+      </div>
+
+      <!-- COBI -->
+      <div class="card" data-index="1">
+        <div class="media">
+          <video muted loop playsinline>
+            <source src="assets/artifacts/cobi/field_1.MP4" type="video/mp4"/>
+          </video>
+        </div>
+        <h3>COBI</h3>
+        <p>Edge-optimized single-class detection system.</p>
+      </div>
+
+      <!-- AE -->
+      <div class="card" data-index="2">
+        <div class="media">
+          <img src="assets/artifacts/ae/diffusion_trajectory_pca.svg"/>
+        </div>
+        <h3>Autoencoder Research</h3>
+        <p>Latent structure formation (in progress).</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CURRENT RESEARCH -->
+  <section class="current">
+    <h2>Current Research</h2>
+    <p class="tag">Autoencoder Architectures (In Progress)</p>
+    <p class="muted">
+      Investigating latent structure formation, PCA trajectory behavior, and reconstruction dynamics.
+    </p>
+
+    <div class="mini-artifact">
+      <img src="assets/artifacts/ae/diffusion_trajectory_pca.svg"/>
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section class="grid">
+    <h2>Other Work</h2>
+
+    <div class="grid-container">
+
+      <a class="grid-card" href="projects/rtgu.html">
+        RTGU
+        <span>Architecture exploration</span>
+      </a>
+
+      <a class="grid-card" href="projects/cobi.html">
+        COBI
+        <span>Edge detection system</span>
+      </a>
+
+    </div>
+  </section>
+
+  <script src="js/carousel.js"></script>
+</body>
+</html>
