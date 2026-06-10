@@ -1,95 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Research Portfolio</title>
-  <link rel="stylesheet" href="css/style.css"/>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div>
-      <h1>Nick</h1>
-      <p class="subtitle">Machine Learning Scientist & Engineer</p>
-      <p class="desc">
-        Developing efficient neural architectures, representation learning methods, and intelligent systems.
-      </p>
-    </div>
-  </header>
-
-  <!-- FEATURED CAROUSEL -->
-  <section class="carousel-section">
-    <h2>Featured Work</h2>
-
-    <div class="carousel" id="carousel">
-
-      <!-- RTGU -->
-      <div class="card active" data-index="0">
-        <div class="media">
-          <img src="assets/artifacts/rtgu/image2.png" />
-        </div>
-        <h3>RTGU</h3>
-        <p>Neural layer architecture for temporal computation.</p>
-      </div>
-
-      <!-- COBI -->
-      <div class="card" data-index="1">
-        <div class="media">
-          <video muted loop playsinline>
-            <source src="assets/artifacts/cobi/field_1.MP4" type="video/mp4"/>
-          </video>
-        </div>
-        <h3>COBI</h3>
-        <p>Edge-optimized single-class detection system.</p>
-      </div>
-
-      <!-- AE -->
-      <div class="card" data-index="2">
-        <div class="media">
-          <img src="assets/artifacts/ae/diffusion_trajectory_pca.svg"/>
-        </div>
-        <h3>Autoencoder Research</h3>
-        <p>Latent structure formation (in progress).</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CURRENT RESEARCH -->
-  <section class="current">
-    <h2>Current Research</h2>
-    <p class="tag">Autoencoder Architectures (In Progress)</p>
-    <p class="muted">
-      Investigating latent structure formation, PCA trajectory behavior, and reconstruction dynamics.
-    </p>
-
-    <div class="mini-artifact">
-      <img src="assets/artifacts/ae/diffusion_trajectory_pca.svg"/>
-    </div>
-  </section>
-
-  <!-- GRID -->
-  <section class="grid">
-    <h2>Other Work</h2>
-
-    <div class="grid-container">
-
-      <a class="grid-card" href="projects/rtgu.html">
-        RTGU
-        <span>Architecture exploration</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Nick van Kemenade - Machine Learning Scientist & Engineer"
+    />
+    <title>Nick van Kemenade</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Nick van Kemenade</strong>
+          <small>Machine Learning Scientist & Engineer</small>
+        </span>
       </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="./index.html" aria-current="page">Home</a>
+        <a href="./timeline.html">Timeline</a>
+        <a href="./research.html">Research</a>
+        <a href="./contact.html">Contact</a>
+      </nav>
+    </header>
 
-      <a class="grid-card" href="projects/cobi.html">
-        COBI
-        <span>Edge detection system</span>
-      </a>
+    <main>
+      <section class="hero panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Machine learning, systems, and research-led product work</p>
+          <h1>Nick van Kemenade</h1>
+          <p class="subtitle">Machine Learning Scientist & Engineer</p>
+          <p class="lead">
+            I build models, experiments, and deployment-minded workflows for research
+            projects that need to survive contact with the real world.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="./research.html">Explore research</a>
+            <a class="button secondary" href="./timeline.html">View timeline</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat">
+            <span class="stat-value">3</span>
+            <span class="stat-label">featured projects in rotation</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">1</span>
+            <span class="stat-label">site, built for GitHub Pages</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">∞</span>
+            <span class="stat-label">room for more research entries</span>
+          </div>
+        </div>
+      </section>
 
-    </div>
-  </section>
+      <section class="panel carousel-section" aria-labelledby="featured-work-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Featured work</p>
+            <h2 id="featured-work-title">Featured work carousel</h2>
+          </div>
+          <div class="carousel-controls">
+            <button class="icon-button" type="button" data-carousel-prev aria-label="Previous project">
+              <span aria-hidden="true">←</span>
+            </button>
+            <button class="icon-button" type="button" data-carousel-next aria-label="Next project">
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </div>
 
-  <script src="js/carousel.js"></script>
-</body>
+        <div class="carousel" data-carousel>
+          <article class="carousel-slide is-active" data-slide="0">
+            <div class="slide-copy">
+              <div class="badge-row">
+                <span class="badge">RTGU</span>
+                <span class="badge muted">Architecture</span>
+              </div>
+              <h3>RTGU</h3>
+              <p>
+                A clear architecture view anchored by <strong>image2.png</strong>, with
+                supporting training and validation snapshots available for context.
+              </p>
+              <p class="slide-note">The goal here is to show the model structure and how the system is assembled.</p>
+            </div>
+            <figure class="slide-media">
+              <img src="./assets/artifacts/rtgu/image2.png" alt="RTGU architecture illustration" />
+            </figure>
+          </article>
+
+          <article class="carousel-slide" data-slide="1">
+            <div class="slide-copy">
+              <div class="badge-row">
+                <span class="badge">COBI</span>
+                <span class="badge muted">Video + representation</span>
+              </div>
+              <h3>COBI</h3>
+              <p>
+                A compact showcase combining the 7-second clip from
+                <strong>field_1.MP4</strong> with the learned representation view in
+                <strong>new_reps.png</strong>.
+              </p>
+              <p class="slide-note">This slide pairs motion with structure to show what the model is learning.</p>
+            </div>
+            <div class="slide-media media-grid">
+              <video controls playsinline preload="metadata" src="./assets/artifacts/cobi/field_1.MP4"></video>
+              <img src="./assets/artifacts/cobi/new_reps.png" alt="COBI representation visualisation" />
+            </div>
+          </article>
+
+          <article class="carousel-slide" data-slide="2">
+            <div class="slide-copy">
+              <div class="badge-row">
+                <span class="badge">AE</span>
+                <span class="badge muted">In progress</span>
+              </div>
+              <h3>AE</h3>
+              <p>
+                The AE work is still in progress, but the current trajectory view already
+                shows the direction of the project.
+              </p>
+              <p class="slide-note">This slide uses the trajectory-SDG visual to keep the narrative moving while the project develops.</p>
+            </div>
+            <figure class="slide-media">
+              <img src="./assets/artifacts/ae/diffusion_trajectory_pca.svg" alt="AE trajectory visualization" />
+            </figure>
+          </article>
+        </div>
+
+        <div class="carousel-footer">
+          <div class="carousel-dots" data-carousel-dots aria-label="Featured work navigation"></div>
+          <p class="carousel-hint">Use the arrows or dots to cycle through the projects.</p>
+        </div>
+      </section>
+
+      <section class="panel about-grid" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Research-first, engineering-aware</h2>
+          <p>
+            I focus on machine learning projects where the details matter: data quality,
+            reliable evaluation, clean interfaces, and a path from idea to working system.
+          </p>
+          <p>
+            This site collects the work I want to keep visible, from experimental
+            architecture views to a more complete research index and a timeline of
+            milestones.
+          </p>
+        </div>
+        <div class="about-list">
+          <div class="info-card">
+            <span class="info-kicker">Focus</span>
+            <p>Machine learning systems, applied research, and practical model development.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-kicker">Output</span>
+            <p>Projects, papers, prototypes, and visual artefacts that help explain the work.</p>
+          </div>
+          <div class="info-card">
+            <span class="info-kicker">Next</span>
+            <p>Timeline details, paper links, and profile connections live in the pages below.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
