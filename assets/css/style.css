@@ -179,3 +179,67 @@ footer {
 
     color: var(--muted);
 }
+.small-hero {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+.project-tile {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tag {
+    display: inline-block;
+
+    margin-top: 1rem;
+
+    padding: 0.35rem 0.7rem;
+
+    border-radius: 999px;
+
+    background: rgba(59,130,246,0.15);
+
+    color: var(--accent);
+
+    font-size: 0.8rem;
+}
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+}
+
+.timeline-item {
+    display: flex;
+
+    gap: 2rem;
+
+    margin-bottom: 3rem;
+}
+
+.timeline-year {
+    min-width: 80px;
+
+    color: var(--accent);
+
+    font-weight: bold;
+}
+
+.timeline-content {
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    padding: 1.5rem;
+
+    border-radius: 12px;
+
+    flex: 1;
+}
+
+.research-image {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
