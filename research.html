@@ -3,81 +3,70 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Research index for Nick van Kemenade" />
-    <title>Research - Nick van Kemenade</title>
+    <title>Research | Nick van Kemenade</title>
+    <meta name="description" content="Research overview for Nick van Kemenade." />
     <link rel="stylesheet" href="./styles.css" />
-    <script defer src="./script.js"></script>
+    <script src="./app.js" defer></script>
   </head>
   <body data-page="research">
     <header class="site-header">
-      <a class="brand" href="./index.html">
-        <span class="brand-mark">N</span>
-        <span>
-          <strong>Nick van Kemenade</strong>
-          <small>Machine Learning Scientist & Engineer</small>
-        </span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="./index.html">Home</a>
-        <a href="./research.html" aria-current="page">Research</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Nick van Kemenade home">
+          <span class="brand-mark">NvK</span>
+          <span class="brand-copy">
+            <strong>Nick van Kemenade</strong>
+            <span>Machine Learning Engineer</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="./index.html">Home</a>
+          <a href="./timeline.html">Timeline</a>
+          <a href="./research.html">Research</a>
+          <a href="./socials.html">Socials</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section class="panel page-intro">
-        <p class="eyebrow"> </p>
-        <h1>Research Index</h1>
-        <p>
-          Here you can find an overview of my research projects, including links to papers.
-        </p>
-      </section>
-
-      <section class="panel">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"> </p>
-            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projects</h2>
-          </div>
-          <p class="section-note"> </p>
+    <main class="section">
+      <div class="container">
+        <div class="page-intro">
+          <p class="eyebrow">Research</p>
+          <h1>Organised research index</h1>
+          <p>
+            I’ve set this page up as a clean research catalogue. Send me your paper titles and links,
+            and I’ll slot them in without changing the structure.
+          </p>
         </div>
+
         <div class="research-grid">
           <article class="research-card">
-            <div class="badge-row">
-              <span class="badge muted">Featured</span>
+            <div>
+              <p class="project-tag">RTGU</p>
+              <h2>Project paper</h2>
+              <p>Paper link pending.</p>
             </div>
-            <h3>RTGU</h3>
-            <p>Architecture-focused work documented through the model structure and supporting visual material.</p>
-            <a class="paper-link" href="https://zenodo.org/records/20618403" target="_blank" rel="noopener noreferrer">
-              Paper link
-              <span aria-hidden="true">→</span>
-            </a>
-          </article>
-          <article class="research-card">
-            <div class="badge-row">
-              <span class="badge muted">Featured</span>
-            </div>
-            <h3>COBI</h3>
-            <p>Representation and motion-focused work combining a short clip with learned-representation visuals.</p>
-            <a class="paper-link" href="./assets/artifacts/cobi/field_1.MP4" target="_blank" rel="noopener noreferrer">
-              Paper link
-              <span aria-hidden="true">→</span>
-            </a>
-          </article>
-          <article class="research-card">
-            <div class="badge-row">
-              <span class="badge muted">In progress</span>
-            </div>
-            <h3>AE</h3>
-            <p>An active project currently in progress, represented here by the trajectory visualization.</p>
-            <a class="paper-link" href="./assets/artifacts/ae/diffusion_trajectory_pca.svg" target="_blank" rel="noopener noreferrer">
-              Paper link
-              <span aria-hidden="true">→</span>
-            </a>
+            <a class="button button-secondary" href="#" aria-disabled="true">Paper link</a>
           </article>
 
+          <article class="research-card">
+            <div>
+              <p class="project-tag">COBI</p>
+              <h2>Project paper</h2>
+              <p>Paper link pending.</p>
+            </div>
+            <a class="button button-secondary" href="#" aria-disabled="true">Paper link</a>
+          </article>
+
+          <article class="research-card">
+            <div>
+              <p class="project-tag">LDM / AE analysation</p>
+              <h2>Project paper</h2>
+              <p>Paper link pending.</p>
+            </div>
+            <a class="button button-secondary" href="#" aria-disabled="true">Paper link</a>
+          </article>
         </div>
-      </section>
+      </div>
     </main>
   </body>
 </html>

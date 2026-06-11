@@ -3,150 +3,163 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nick van Kemenade | Machine Learning Engineer</title>
     <meta
       name="description"
-      content="Nick van Kemenade - Machine Learning Scientist & Engineer"
+      content="Portfolio site for Nick van Kemenade, Machine Learning Engineer."
     />
-    <title>Nick van Kemenade</title>
     <link rel="stylesheet" href="./styles.css" />
-    <script defer src="./script.js"></script>
+    <script src="./app.js" defer></script>
   </head>
   <body data-page="home">
     <header class="site-header">
-      <a class="brand" href="./index.html">
-        <span class="brand-mark">N</span>
-        <span>
-          <strong>Nick van Kemenade</strong>
-          <small>Machine Learning Scientist & Engineer</small>
-        </span>
-      </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="./index.html" aria-current="page">Home</a>
-        <a href="./research.html">Research</a>
-        <a href="./contact.html">Contact</a>
-      </nav>
+      <div class="container header-inner">
+        <a class="brand" href="./index.html" aria-label="Nick van Kemenade home">
+          <span class="brand-mark">NvK</span>
+          <span class="brand-copy">
+            <strong>Nick van Kemenade</strong>
+            <span>Machine Learning Engineer</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="./index.html">Home</a>
+          <a href="./timeline.html">Timeline</a>
+          <a href="./research.html">Research</a>
+          <a href="./socials.html">Socials</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="hero panel">
-        <div class="hero-copy">
-          <p class="eyebrow"> </p>
-          <h1>Nick van Kemenade</h1>
-          <p class="subtitle">Machine Learning Scientist & Engineer</p>
-          <p class="lead">
-            I develop machine learning architectures and systems, perform research and implementation.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="./research.html">View research</a>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Portfolio</p>
+            <h1>Nick van Kemenade</h1>
+            <p class="subtitle">Machine Learning Engineer</p>
+            <p class="lede">
+              Clean research engineering work across representation learning, latent diffusion, and
+              applied machine learning.
+            </p>
+            <div class="hero-links">
+              <a class="button button-primary" href="./research.html">Research</a>
+              <a class="button button-secondary" href="./timeline.html">Timeline</a>
+            </div>
           </div>
+
+          <aside class="hero-panel" aria-label="Profile summary">
+            <div class="panel-row">
+              <span class="panel-label">Focus</span>
+              <span class="panel-value">Machine learning systems and analysis</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-label">Style</span>
+              <span class="panel-value">Concise, academic, implementation-first</span>
+            </div>
+            <div class="panel-row">
+              <span class="panel-label">Now</span>
+              <span class="panel-value">June 2026 project track</span>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section class="panel carousel-section" aria-labelledby="featured-work-title">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow"> </p>
-            <h2 id="featured-work-title">Featured Work</h2>
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Featured work</p>
+              <h2>Selected projects</h2>
+            </div>
+            <p class="section-note">Three focused projects, shown with their core output artifacts.</p>
           </div>
-          <div class="carousel-controls">
-            <button class="icon-button" type="button" data-carousel-prev aria-label="Previous project">
-              <span aria-hidden="true">←</span>
-            </button>
-            <button class="icon-button" type="button" data-carousel-next aria-label="Next project">
-              <span aria-hidden="true">→</span>
-            </button>
-          </div>
-        </div>
 
-        <div class="carousel" data-carousel>
-          <article class="carousel-slide is-active" data-slide="0">
-            <div class="slide-copy">
-              <div class="badge-row">
-                <span class="badge">RTGU</span>
-                <span class="badge muted">Architecture</span>
+          <div class="carousel" data-carousel>
+            <div class="carousel-shell">
+              <button
+                class="carousel-control carousel-control-prev"
+                type="button"
+                data-carousel-prev
+                aria-label="Previous project"
+              >
+                Prev
+              </button>
+
+              <div class="carousel-viewport">
+                <div class="carousel-track" data-carousel-track>
+                  <article class="project-slide" data-slide>
+                    <div class="project-copy">
+                      <p class="project-tag">RTGU</p>
+                      <h3>August 2025</h3>
+                      <p>
+                        Representation-focused work with a single primary result image.
+                      </p>
+                    </div>
+                    <div class="project-media media-single">
+                      <img
+                        src="./assets/artifacts/rtgu/image2.png"
+                        alt="RTGU result figure"
+                      />
+                    </div>
+                  </article>
+
+                  <article class="project-slide" data-slide>
+                    <div class="project-copy">
+                      <p class="project-tag">COBI</p>
+                      <h3>September 2025 to May 2026</h3>
+                      <p>
+                        Two core outputs: the new representations figure and the field_1 video.
+                      </p>
+                    </div>
+                    <div class="project-media media-grid">
+                      <figure class="media-card">
+                        <img
+                          src="./assets/artifacts/cobi/new_reps.png"
+                          alt="COBI new representations figure"
+                        />
+                        <figcaption>new_reps</figcaption>
+                      </figure>
+                      <figure class="media-card">
+                        <video controls preload="metadata" playsinline>
+                          <source src="./assets/artifacts/cobi/field_1.MP4" type="video/mp4" />
+                        </video>
+                        <figcaption>field_1</figcaption>
+                      </figure>
+                    </div>
+                  </article>
+
+                  <article class="project-slide" data-slide>
+                    <div class="project-copy">
+                      <p class="project-tag">LDM/AE analysation</p>
+                      <h3>June 2026 to now</h3>
+                      <p>
+                        Latent diffusion and autoencoder trajectory analysis with a compact visual summary.
+                      </p>
+                    </div>
+                    <div class="project-media media-single">
+                      <img
+                        src="./assets/artifacts/ae/diffusion_trajectory_pca.svg"
+                        alt="LDM/AE trajectory plot"
+                      />
+                    </div>
+                  </article>
+                </div>
               </div>
-              <h3>RTGU</h3>
-              <p>
-                A presentation of the model architecture, anchored by <strong>image2.png</strong>,
-                with supporting training and validation views available for context.
-              </p>
-              <p class="slide-note">The purpose of this slide is to document the model structure and system design.</p>
-            </div>
-            <figure class="slide-media">
-              <img src="./assets/artifacts/rtgu/image2.png" alt="RTGU architecture illustration" />
-            </figure>
-          </article>
 
-          <article class="carousel-slide" data-slide="1">
-            <div class="slide-copy">
-              <div class="badge-row">
-                <span class="badge">COBI</span>
-                <span class="badge muted">Video + representation</span>
-              </div>
-              <h3>COBI</h3>
-              <p>
-                A concise presentation combining the 7-second clip from
-                <strong>field_1.MP4</strong> with the learned representation view in
-                <strong>new_reps.png</strong>.
-              </p>
-              <p class="slide-note">The slide combines motion and representation to illustrate the learned structure.</p>
+              <button
+                class="carousel-control carousel-control-next"
+                type="button"
+                data-carousel-next
+                aria-label="Next project"
+              >
+                Next
+              </button>
             </div>
-            <div class="slide-media media-grid">
-              <video controls playsinline preload="metadata" src="./assets/artifacts/cobi/field_1.MP4"></video>
-              <img src="./assets/artifacts/cobi/new_reps.png" alt="COBI representation visualisation" />
+
+            <div class="carousel-footer">
+              <div class="carousel-dots" data-carousel-dots aria-label="Project carousel"></div>
+              <p class="carousel-meta" data-carousel-meta>RTGU</p>
             </div>
-          </article>
-
-          <article class="carousel-slide" data-slide="2">
-            <div class="slide-copy">
-              <div class="badge-row">
-                <span class="badge">AE</span>
-                <span class="badge muted">In progress</span>
-              </div>
-              <h3>AE</h3>
-              <p>
-                The AE project is in progress, and the current trajectory view indicates the
-                present direction of the work.
-              </p>
-              <p class="slide-note">This slide uses the trajectory-SDG visual as a work-in-progress reference point.</p>
-            </div>
-            <figure class="slide-media">
-              <img src="./assets/artifacts/ae/diffusion_trajectory_pca.svg" alt="AE trajectory visualization" />
-            </figure>
-          </article>
-        </div>
-
-        <div class="carousel-footer">
-          <div class="carousel-dots" data-carousel-dots aria-label="Featured work navigation"></div>
-          <p class="carousel-hint">Use the arrows or dots to cycle through the projects.</p>
-        </div>
-      </section>
-
-      <section class="panel about-grid" aria-labelledby="about-title">
-        <div class="about-copy">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">Research-oriented and engineering-aware</h2>
-          <p>
-            My work focuses on machine learning projects where detail matters: data quality,
-            reproducible evaluation, clear interfaces, and a path from concept to working
-            system.
-          </p>
-          <p>
-            This site presents selected projects, a research index, and my contact information.
-          </p>
-        </div>
-        <div class="about-list">
-          <div class="info-card">
-            <span class="info-kicker">Focus</span>
-            <p>Machine learning systems, applied research, and practical model development.</p>
-          </div>
-          <div class="info-card">
-            <span class="info-kicker">Output</span>
-            <p>Projects, papers, prototypes, and visual material that communicate the work clearly.</p>
-          </div>
-          <div class="info-card">
-            <span class="info-kicker">Next</span>
-            <p>Details, paper links, and profile connections are available on the pages below.</p>
           </div>
         </div>
       </section>
