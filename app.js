@@ -26,6 +26,7 @@
   if (!track || slides.length === 0 || !dotsWrap || !meta) return;
 
   let index = 0;
+  let autoplayTimer = null;
   const labels = ["RTGU", "COBI", "LDM / AE"];
 
   const dots = slides.map((_, slideIndex) => {
@@ -58,8 +59,29 @@
     update();
   };
 
-  prevButton?.addEventListener("click", () => setIndex(index - 1));
-  nextButton?.addEventListener("click", () => setIndex(index + 1));
+  const stopAutoplay = () => {
+    if (autoplayTimer) {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayTimer = window.setInterval(() => {
+      setIndex(index + 1);
+    }, 20000);
+  };
+
+  prevButton?.addEventListener("click", () => {
+    setIndex(index - 1);
+    startAutoplay();
+  });
+
+  nextButton?.addEventListener("click", () => {
+    setIndex(index + 1);
+    startAutoplay();
+  });
 
   document.addEventListener("keydown", (event) => {
     if (!carousel.contains(document.activeElement) && document.activeElement !== document.body) {
@@ -68,12 +90,25 @@
 
     if (event.key === "ArrowLeft") {
       setIndex(index - 1);
+      startAutoplay();
     }
 
     if (event.key === "ArrowRight") {
       setIndex(index + 1);
+      startAutoplay();
+    }
+  });
+
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("mouseleave", startAutoplay);
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopAutoplay();
+    } else {
+      startAutoplay();
     }
   });
 
   update();
+  startAutoplay();
 })();
