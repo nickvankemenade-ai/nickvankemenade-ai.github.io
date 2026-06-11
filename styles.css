@@ -236,6 +236,12 @@ video {
   border-color: var(--line);
 }
 
+.button-deep {
+  background: #e7eefb;
+  border-color: rgba(31, 79, 191, 0.18);
+  color: var(--accent-deep);
+}
+
 .hero-panel {
   padding: 24px;
   display: grid;
@@ -351,8 +357,14 @@ video {
   line-height: 1.58;
 }
 
+.project-detail {
+  margin-top: 12px;
+  max-width: 58ch;
+  color: var(--muted);
+}
+
 .project-media {
-  min-height: 420px;
+  height: 430px;
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 7px;
@@ -362,12 +374,13 @@ video {
 .media-single {
   display: grid;
   place-items: center;
+  height: 100%;
 }
 
 .media-single img,
 .media-single video {
   width: 100%;
-  height: min(520px, 58vh);
+  height: 100%;
   object-fit: contain;
 }
 
@@ -375,12 +388,13 @@ video {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+  height: 100%;
 }
 
 .media-grid img,
 .media-grid video {
   width: 100%;
-  height: 320px;
+  height: 100%;
   object-fit: contain;
 }
 
@@ -388,6 +402,8 @@ video {
   margin: 0;
   display: grid;
   gap: 10px;
+  height: 100%;
+  grid-template-rows: minmax(0, 1fr) auto;
 }
 
 .media-card img,
@@ -456,14 +472,14 @@ video {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 22px;
-  padding: 34px 0 18px;
+  padding: 18px 0 18px;
 }
 
 .timeline-line {
   position: absolute;
-  left: 6%;
-  right: 6%;
-  top: 59px;
+  left: 4%;
+  right: 4%;
+  top: 38px;
   height: 2px;
   background: linear-gradient(90deg, var(--line-strong), var(--accent), var(--line-strong));
 }
@@ -473,12 +489,12 @@ video {
   display: grid;
   gap: 16px;
   align-content: start;
-  padding-top: 24px;
+  padding-top: 0;
 }
 
 .timeline-dot {
   position: absolute;
-  top: 49px;
+  top: 29px;
   left: 50%;
   width: 16px;
   height: 16px;
@@ -494,11 +510,13 @@ video {
   font-weight: 700;
   letter-spacing: 0.03em;
   text-align: center;
+  padding-bottom: 14px;
 }
 
 .timeline-card {
   padding: 22px 24px;
   margin-top: 4px;
+  min-height: 130px;
 }
 
 .timeline-card h2,
@@ -530,9 +548,43 @@ video {
   min-height: 170px;
 }
 
-.social-card {
+.research-card {
+  position: relative;
+  overflow: hidden;
   align-items: start;
   flex-direction: column;
+  background:
+    linear-gradient(180deg, rgba(31, 79, 191, 0.1), transparent 48px),
+    rgba(255, 255, 255, 0.94);
+}
+
+.research-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--accent);
+}
+
+.research-card > div {
+  padding-left: 4px;
+  max-width: 40ch;
+}
+
+.research-card p:last-child {
+  margin-bottom: 0;
+}
+
+.research-card .button {
+  align-self: flex-end;
+}
+
+.social-card {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 180px;
+  gap: 14px;
 }
 
 .social-card:hover {
@@ -542,6 +594,31 @@ video {
 
 .social-value {
   font-size: 1rem;
+}
+
+.social-icon {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 79, 191, 0.15);
+  background: linear-gradient(180deg, rgba(31, 79, 191, 0.08), rgba(255, 255, 255, 0.96));
+  color: var(--accent-deep);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.social-icon img,
+.social-icon svg {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.social-icon-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 [aria-disabled="true"] {
@@ -621,7 +698,7 @@ video {
   }
 
   .project-media {
-    min-height: 320px;
+    height: 320px;
   }
 
   .media-grid {
@@ -630,7 +707,7 @@ video {
 
   .media-grid img,
   .media-grid video {
-    height: 220px;
+    height: 100%;
   }
 
   .project-copy h3 {
