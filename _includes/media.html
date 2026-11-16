@@ -8,7 +8,7 @@
     {% if m.type == "video" %}
       <video src="{{ m.src | relative_url }}"{% if m.poster %} poster="{{ m.poster | relative_url }}"{% endif %} autoplay muted loop playsinline aria-label="{{ m.alt }}"></video>
     {% else %}
-      <img src="{{ m.src | relative_url }}" alt="{{ m.alt }}" loading="lazy">
+      <img src="{{ m.src | relative_url }}" alt="{{ m.alt }}" loading="{% if include.eager %}eager{% else %}lazy{% endif %}">
     {% endif %}
   {% else %}
     <div class="placeholder">{% if m.type == "video" %}Video{% else %}Image{% endif %} placeholder{% if m.alt %}: {{ m.alt }}{% endif %}</div>

@@ -9,7 +9,7 @@ layout: default
       {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
       {% include links.html links=page.links %}
     </header>
-    {% if page.media %}{% include media.html media=page.media %}{% endif %}
+    {% if page.media %}{% include media.html media=page.media eager=true %}{% endif %}
   </div>
 
   <div class="prose">
