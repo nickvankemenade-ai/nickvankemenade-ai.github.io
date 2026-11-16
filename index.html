@@ -33,12 +33,16 @@ title: Home
   </ul>
 </section>
 
-<section class="section band">
-  <div class="section-head">
-    <h2>News</h2>
-    <a href="{{ '/news/' | relative_url }}">All news</a>
+<section class="band">
+  <div class="band-head">
+    <div class="section-head">
+      <h2>News</h2>
+      <a href="{{ '/news/' | relative_url }}">All news</a>
+    </div>
   </div>
-  {% include news-list.html limit=4 %}
+  <div class="band-body">
+    {% include news-list.html limit=4 %}
+  </div>
 </section>
 
 <section class="section closing">

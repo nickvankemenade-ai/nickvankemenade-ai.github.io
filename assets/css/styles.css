@@ -2,6 +2,8 @@
   /* Greys */
   --ground: #1d1d1d;
   --surface: #272726;
+  --band-mid: #262625;      /* between ground and band-light */
+  --band-light: #2e2e2d;    /* same as the top bar */
   --border: #3a3a38;
   --text: #ececea;
   --text-body: #cfcfcb;
@@ -212,15 +214,27 @@ html { scroll-padding-top: 96px; }
 /* Sections */
 .section { padding-bottom: 160px; }
 
-/* Full-width band in the top bar's lighter grey */
-.band {
-  margin: 0 calc(50% - 50vw) 160px;
-  padding: 112px calc(50vw - 50%);
-  background: #2e2e2d;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+/* Full-width band: a mid-grey title strip over the top bar's lighter grey */
+.band { margin-bottom: 160px; }
+.band-head, .band-body {
+  margin: 0 calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+}
+.band-head {
+  background: var(--band-mid);
+  padding-top: 72px;
+  padding-bottom: 48px;
+}
+.band-head .section-head { margin-bottom: 0; }
+.band-body {
+  background: var(--band-light);
+  padding-top: 24px;
+  padding-bottom: 112px;
 }
 .band .news-item { border-color: #444442; }
+.band-page { margin-bottom: 0; }
+.band-page .page-head { padding-top: clamp(56px, 9vw, 112px); padding-bottom: 48px; }
 .section h2 {
   margin: 0 0 32px;
   font-size: 40px;
