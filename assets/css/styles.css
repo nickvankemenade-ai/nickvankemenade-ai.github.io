@@ -249,6 +249,8 @@ html { scroll-padding-top: 96px; }
 }
 .band .news-item { border-color: #444442; }
 .band-page { margin-bottom: 0; }
+.works-head { margin-bottom: 72px; }
+.band-head-art.art-network::before { background-image: url("../img/hero/network.svg"); }
 .band-page .page-head { padding-top: clamp(56px, 9vw, 112px); padding-bottom: 48px; }
 .section h2 {
   margin: 0 0 32px;
