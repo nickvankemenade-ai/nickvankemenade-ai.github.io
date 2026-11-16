@@ -1,0 +1,10 @@
+{% comment %}Usage: {% include news-list.html limit=4 %} (omit limit for all items){% endcomment %}
+{% assign limit = include.limit | default: site.data.news.size %}
+<ul class="news-list">
+  {% for item in site.data.news limit: limit %}
+  <li>
+    <span class="muted">{{ item.date }}</span>
+    <p>{{ item.text }}{% if item.url %} <a href="{{ item.url }}">{{ item.link_label | default: 'More' }}</a>{% endif %}</p>
+  </li>
+  {% endfor %}
+</ul>

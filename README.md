@@ -20,7 +20,7 @@ Personal site, built by GitHub Pages with Jekyll. Push to `main` and it rebuilds
 | --- | --- |
 | Top bar links | `_data/navigation.yml` |
 | Contact links (and which appear in the footer) | `_data/contact.yml` |
-| Homepage news | `_data/news.yml` |
+| News (homepage shows the newest 4, `/news/` shows all) | `_data/news.yml` |
 | Publications | `_data/publications.yml` |
 | About text | `about/index.html` |
 | Colours and type | `assets/css/styles.css` (variables at the top) |

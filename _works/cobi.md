@@ -12,8 +12,8 @@ media:
 
 COBI detects game pieces in real time from a robot's camera. It is optimised to run on the Coral Edge TPU, a small, low-power accelerator suited to on-robot use.
 
-The current version is specialised for REBUILT, the 2026 FRC game.
+The current version is specialised for REBUILT, the 2026 FRC game. FRC team 4481 will use COBI in the 2027 season.
 
 The figure is from an old demo from 2025. It shows how the network responds to a single camera frame, ending in the final detections with their confidence scores.
 
-COBI is closed-source, so there is no paper or code to link.
+COBI is closed-source for now, so there is no paper or code to link. Whether it will be open-sourced has not been decided.

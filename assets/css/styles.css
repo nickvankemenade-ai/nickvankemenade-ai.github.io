@@ -304,6 +304,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 }
 .news-list li:last-child { border-bottom: 1px solid var(--border); }
 .news-list .muted { font-size: 14px; }
+.news-page .news-list { max-width: 820px; }
 .news-list p { margin: 0; color: var(--text-body); }
 
 /* Article (work pages) */

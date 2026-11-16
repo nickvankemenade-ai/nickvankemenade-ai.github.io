@@ -21,4 +21,4 @@ lm-FineWeb trains a decoder-only transformer on FineWeb, a large dataset of filt
 
 ## Results
 
-In November 2026, a 257M-parameter model trained on 1.9 billion tokens reached a validation loss of 3.20.
+In November 2026, a 257M-parameter model trained on 1.9B tokens reached a validation loss of 3.20.
