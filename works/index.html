@@ -6,21 +6,38 @@ title: Works
   <p class="lede">Everything I've worked on, including research papers and projects.</p>
 </header>
 
+{% comment %}
+  A vertical timeline: years sit on the line, each work gets a marker with its
+  month to the left. Built from each work's `date`, newest first.
+{% endcomment %}
 {% assign works = site.works | sort: 'date' | reverse %}
 {% assign by_year = works | group_by_exp: 'w', "w.date | date: '%Y'" %}
-{% for year in by_year %}
-<section class="year-group">
-  <h2>{{ year.name }}</h2>
-  <ul class="index-list">
-    {% for work in year.items %}
-    <li class="index-row">
-      <h3><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h3>
-      <div>
-        <p>{{ work.summary }}</p>
-        {% include links.html links=work.links %}
-      </div>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endfor %}
+<ol class="timeline">
+  {% for year in by_year %}
+  <li class="tl-year">
+    <h2 class="tl-year-label">{{ year.name }}</h2>
+    <ol class="tl-list">
+      {% for work in year.items %}
+      <li class="tl-entry">
+        <time class="tl-month" datetime="{{ work.date | date: '%Y-%m' }}">{{ work.date | date: '%b' }}</time>
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-body">
+          <div>
+            <h3><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h3>
+            <p>{{ work.summary }}</p>
+            {% include links.html links=work.links %}
+          </div>
+          {% if work.media and work.media.src and work.media.src != "" %}
+          <a class="tl-thumb{% if work.media.dim %} dim{% endif %}" href="{{ work.url | relative_url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ work.media.src | relative_url }}" alt="" loading="lazy">
+          </a>
+          {% else %}
+          <span class="tl-thumb empty" aria-hidden="true"></span>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </li>
+  {% endfor %}
+</ol>
