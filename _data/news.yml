@@ -1,0 +1,11 @@
+# Newest first. The homepage shows the first four.
+- date: "[Month year]"
+  text: "[Something that happened, e.g. a paper accepted or a talk given.]"
+  url: "#"
+  link_label: Paper
+- date: "[Month year]"
+  text: "[Something that happened.]"
+- date: "[Month year]"
+  text: "[Something that happened.]"
+- date: "[Month year]"
+  text: "[Something that happened.]"

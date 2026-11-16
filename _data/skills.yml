@@ -1,0 +1,6 @@
+- group: "[Research areas]"
+  items: ["[Area]", "[Area]", "[Area]"]
+- group: "[Languages]"
+  items: ["Python", "[Language]"]
+- group: "[Tools]"
+  items: ["[Tool]", "[Tool]", "[Tool]"]

@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <p>{{ site.author.name }}, {{ site.time | date: '%Y' }}</p>
+  <div>
+    {% for item in site.data.contact %}
+      {% if item.footer %}<a href="{{ item.url }}">{{ item.label }}</a>{% endif %}
+    {% endfor %}
+  </div>
+</footer>

@@ -1,0 +1,17 @@
+---
+title: Contact
+---
+<header class="page-head">
+  <h1>Contact</h1>
+  <p class="lede">[A sentence on what you are happy to hear about, and how quickly you usually reply.]</p>
+</header>
+
+<ul class="contact-list">
+  {% for item in site.data.contact %}
+  <li>
+    <span class="contact-label">{{ item.label }}</span>
+    <a href="{{ item.url }}">{{ item.handle }}</a>
+    <span class="muted">{{ item.note }}</span>
+  </li>
+  {% endfor %}
+</ul>

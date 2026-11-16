@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="article">
+  <header class="page-head">
+    <a class="back-link" href="{{ '/works/' | relative_url }}">All works</a>
+    <h1>{{ page.title }}</h1>
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+    {% include links.html links=page.links %}
+  </header>
+
+  {% if page.media %}{% include media.html media=page.media %}{% endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {% if page.bibtex %}
+  <section class="cite">
+    <h2>Cite</h2>
+    <pre><code>{{ page.bibtex | escape }}</code></pre>
+  </section>
+  {% endif %}
+
+  {% assign works = site.works | sort: 'date' | reverse %}
+  {% assign i = 0 %}
+  {% for w in works %}
+    {% if w.url == page.url %}{% assign i = forloop.index0 %}{% endif %}
+  {% endfor %}
+  {% assign prev_i = i | minus: 1 %}
+  {% assign next_i = i | plus: 1 %}
+  <nav class="pager" aria-label="More works">
+    {% if i > 0 %}{% assign newer = works[prev_i] %}<a href="{{ newer.url | relative_url }}"><span>Newer</span>{{ newer.title }}</a>{% else %}<span></span>{% endif %}
+    {% if next_i < works.size %}{% assign older = works[next_i] %}<a class="pager-next" href="{{ older.url | relative_url }}"><span>Older</span>{{ older.title }}</a>{% endif %}
+  </nav>
+</article>

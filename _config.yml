@@ -1,0 +1,45 @@
+title: Nick van Kemenade
+description: Research and projects by Nick van Kemenade.
+url: https://nickvankemenade-ai.github.io
+baseurl: ""
+lang: en
+
+author:
+  name: Nick van Kemenade
+
+markdown: kramdown
+permalink: /notes/:year/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+feed:
+  path: notes/feed.xml
+
+collections:
+  works:
+    output: true
+    permalink: /works/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: works
+    values:
+      layout: work
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock

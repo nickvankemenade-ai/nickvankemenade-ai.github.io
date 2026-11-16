@@ -1,0 +1,26 @@
+---
+title: Works
+---
+<header class="page-head">
+  <h1>Works</h1>
+  <p class="lede">[A sentence on the kind of work collected here.]</p>
+</header>
+
+{% assign works = site.works | sort: 'date' | reverse %}
+{% assign by_year = works | group_by_exp: 'w', "w.date | date: '%Y'" %}
+{% for year in by_year %}
+<section class="year-group">
+  <h2>{{ year.name }}</h2>
+  <ul class="index-list">
+    {% for work in year.items %}
+    <li class="index-row">
+      <h3><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h3>
+      <div>
+        <p>{{ work.summary }}</p>
+        {% include links.html links=work.links %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

@@ -1,0 +1,7 @@
+{% if include.links and include.links.size > 0 %}
+<div class="work-links">
+  {% for link in include.links %}
+    <a href="{{ link.url }}">{{ link.label }}</a>
+  {% endfor %}
+</div>
+{% endif %}

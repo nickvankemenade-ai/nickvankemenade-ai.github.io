@@ -1,0 +1,16 @@
+{% comment %}
+  Shows a work's image or video, or a labelled placeholder when `src` is empty.
+  Usage: {% include media.html media=work.media %}
+{% endcomment %}
+{% assign m = include.media %}
+<figure class="work-media">
+  {% if m.src and m.src != "" %}
+    {% if m.type == "video" %}
+      <video src="{{ m.src | relative_url }}"{% if m.poster %} poster="{{ m.poster | relative_url }}"{% endif %} autoplay muted loop playsinline aria-label="{{ m.alt }}"></video>
+    {% else %}
+      <img src="{{ m.src | relative_url }}" alt="{{ m.alt }}" loading="lazy">
+    {% endif %}
+  {% else %}
+    <div class="placeholder">{% if m.type == "video" %}Video{% else %}Image{% endif %} placeholder{% if m.alt %}: {{ m.alt }}{% endif %}</div>
+  {% endif %}
+</figure>

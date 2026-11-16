@@ -1,0 +1,17 @@
+---
+title: Publications
+---
+<header class="page-head">
+  <h1>Publications</h1>
+</header>
+
+<ol class="pub-list">
+  {% for pub in site.data.publications %}
+  <li>
+    <p class="pub-title">{% if pub.url %}<a class="plain" href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</p>
+    <p class="muted">{{ pub.authors }}</p>
+    <p class="muted"><em>{{ pub.venue }}</em>, {{ pub.year }}</p>
+    {% include links.html links=pub.links %}
+  </li>
+  {% endfor %}
+</ol>

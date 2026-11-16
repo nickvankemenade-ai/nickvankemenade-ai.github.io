@@ -1,0 +1,12 @@
+# Top bar links, in order. `button: true` draws the item as a button.
+- title: Works
+  url: /works/
+- title: Publications
+  url: /publications/
+- title: Notes
+  url: /notes/
+- title: About
+  url: /about/
+- title: Contact
+  url: /contact/
+  button: true

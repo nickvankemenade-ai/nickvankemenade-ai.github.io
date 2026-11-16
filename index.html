@@ -1,104 +1,62 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nick van Kemenade</title>
-  <meta name="description" content="Research and projects by Nick van Kemenade.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="wrap">
-    <header class="site-nav">
-      <a class="site-name" href="/">Nick van Kemenade</a>
-      <nav aria-label="Main">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a class="button button-light" href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="intro" id="about">
-        <h1>[A one-line statement about your work]</h1>
-        <p>[One or two sentences about who you are, where you study or work, and what you are focused on now.]</p>
-        <div class="actions">
-          <a class="button button-accent" href="#work">See my work</a>
-          <a class="button button-outline" href="#contact">Get in touch</a>
-        </div>
-      </section>
-
-      <section class="section" id="work">
-        <h2>Selected work</h2>
-        <ul class="work-list">
-          <li class="work">
-            <div class="work-text">
-              <h3><a href="#">[Project title]</a></h3>
-              <span class="tag tag-turquoise">In progress</span>
-              <p>[What the project is about: the question you set out to answer, the approach you took, and what you found or are finding. Two to four sentences.]</p>
-              <div class="work-links">
-                <a href="#">Paper</a>
-                <a href="#">Code</a>
-              </div>
-            </div>
-            <figure class="work-media">
-              <div class="placeholder">Image placeholder: a figure or result from this project</div>
-            </figure>
-          </li>
-
-          <li class="work">
-            <div class="work-text">
-              <h3><a href="#">[Project title]</a></h3>
-              <span class="tag tag-blue">Preprint, [year]</span>
-              <p>[What the project is about: the question you set out to answer, the approach you took, and what you found. Two to four sentences.]</p>
-              <div class="work-links">
-                <a href="#">Paper</a>
-                <a href="#">Code</a>
-              </div>
-            </div>
-            <figure class="work-media">
-              <div class="placeholder">Image placeholder: a figure or result from this project</div>
-            </figure>
-          </li>
-
-          <li class="work">
-            <div class="work-text">
-              <h3><a href="#">[Project title]</a></h3>
-              <span class="tag tag-cyan">Thesis, [year]</span>
-              <p>[What the project is about: the question you set out to answer, the approach you took, and what you found. Two to four sentences.]</p>
-              <div class="work-links">
-                <a href="#">Read the thesis</a>
-              </div>
-            </div>
-            <figure class="work-media">
-              <div class="placeholder">Image placeholder: a figure or result from this project</div>
-            </figure>
-          </li>
-        </ul>
-      </section>
-
-      <section class="section" id="contact">
-        <h2>Contact</h2>
-        <div class="contact">
-          <p>[A sentence on what you are open to, such as collaborations, research positions or questions about your work.]</p>
-          <div class="actions" style="justify-content: flex-start; padding-top: 0;">
-            <a class="button button-accent" href="mailto:[your-email]">Send an email</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <p>Nick van Kemenade, 2026</p>
-      <div>
-        <a href="https://github.com/nickvankemenade-ai">GitHub</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Zenodo</a>
-      </div>
-    </footer>
+---
+title: Home
+---
+<section class="intro">
+  <h1>[A one-line statement about your work]</h1>
+  <p>[One or two sentences about who you are, where you study or work, and what you are focused on now.]</p>
+  <div class="actions">
+    <a class="button button-accent" href="{{ '/works/' | relative_url }}">See all works</a>
+    <a class="button button-outline" href="{{ '/contact/' | relative_url }}">Get in touch</a>
   </div>
-</body>
-</html>
+</section>
+
+<section class="section">
+  <div class="section-head">
+    <h2>Selected work</h2>
+    <a href="{{ '/works/' | relative_url }}">All works</a>
+  </div>
+  <ul class="work-list">
+    {% assign featured = site.works | where: 'featured', true | sort: 'date' | reverse %}
+    {% for work in featured limit: 3 %}
+    <li class="work">
+      <div class="work-text">
+        <h3><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h3>
+        <p>{{ work.summary }}</p>
+        {% include links.html links=work.links %}
+      </div>
+      {% include media.html media=work.media %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="section split">
+  <div>
+    <h2>News</h2>
+    <ul class="news-list">
+      {% for item in site.data.news limit: 4 %}
+      <li>
+        <span class="muted">{{ item.date }}</span>
+        <p>{{ item.text }}{% if item.url %} <a href="{{ item.url }}">{{ item.link_label | default: 'More' }}</a>{% endif %}</p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2>Notes</h2>
+    <ul class="news-list">
+      {% for post in site.posts limit: 3 %}
+      <li>
+        <span class="muted">{{ post.date | date: '%-d %B %Y' }}</span>
+        <p><a class="plain" href="{{ post.url | relative_url }}">{{ post.title }}</a></p>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section closing">
+  <h2>Working on something similar?</h2>
+  <p>[A sentence on what you are open to, such as collaborations, research positions or questions about your work.]</p>
+  <a class="button button-light" href="{{ '/contact/' | relative_url }}">Contact</a>
+</section>
