@@ -1,8 +1,8 @@
 # Used by the contact page and the footer.
 # `footer: true` also shows the link in the footer of every page.
 - label: Email
-  handle: "[your-email]"
-  url: "mailto:[your-email]"
+  handle: nick.vk.ai@gmail.com
+  url: "mailto:nick.vk.ai@gmail.com"
   note: "The best way to reach me."
   footer: true
 - label: GitHub
@@ -11,7 +11,7 @@
   note: "Code for most projects."
   footer: true
 - label: Zenodo
-  handle: "[your Zenodo profile]"
-  url: "#"
+  handle: Nick_van_Kemenade
+  url: "https://zenodo.org/search?q=%22Nick%20van%20Kemenade%22"
   note: "Datasets, preprints and archived releases."
   footer: true
