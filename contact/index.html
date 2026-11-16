@@ -1,17 +1,21 @@
 ---
 title: Contact
 ---
-<header class="page-head">
-  <h1>Contact</h1>
-  <p class="lede">For questions about my work, collaborations or positions, email me. I usually reply within a few days.</p>
-</header>
-
-<ul class="contact-list">
-  {% for item in site.data.contact %}
-  <li>
-    <span class="contact-label">{{ item.label }}</span>
-    <a href="{{ item.url }}">{{ item.handle }}</a>
-    <span class="muted">{{ item.note }}</span>
-  </li>
-  {% endfor %}
-</ul>
+{% comment %}
+  The first entry in _data/contact.yml is shown large (the email address);
+  the others become buttons underneath.
+{% endcomment %}
+{% assign main = site.data.contact | first %}
+<section class="stage stage-centered art-bold-flows scrim-strong">
+  <div class="stage-art" aria-hidden="true"></div>
+  <div class="stage-inner">
+    <h1 class="big-title">Contact</h1>
+    <p class="lede">For questions about my work, collaborations or positions, email me. I usually reply within a few days.</p>
+    <a class="contact-main" href="{{ main.url }}">{{ main.handle }}</a>
+    <div class="contact-others">
+      {% for item in site.data.contact offset: 1 %}
+      <a class="button button-outline" href="{{ item.url }}">{{ item.label }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
