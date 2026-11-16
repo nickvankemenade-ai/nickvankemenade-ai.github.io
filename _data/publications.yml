@@ -1,18 +1,13 @@
 # Newest first.
-- title: "[Paper title]"
-  authors: "Nick van Kemenade, [Co-author], [Co-author]"
-  venue: "[Venue or arXiv]"
-  year: 2026
-  url: "#"
-  links:
-    - label: PDF
-      url: "#"
-    - label: Code
-      url: "#"
-- title: "[Thesis title]"
+- title: "Learning Interpretable Generative Manifolds through Contrastive Cosine Similarity"
   authors: "Nick van Kemenade"
-  venue: "[Master's thesis, University]"
-  year: 2025
+  venue: "Zenodo"
+  year: 2026
+  url: https://zenodo.org/records/24282231
   links:
-    - label: PDF
-      url: "#"
+    - label: Paper
+      url: https://zenodo.org/records/24282231
+    - label: Code
+      url: https://github.com/nickvankemenade-ai/concos
+    - label: Project page
+      url: /works/concos/
