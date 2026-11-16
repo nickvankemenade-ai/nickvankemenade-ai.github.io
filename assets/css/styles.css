@@ -26,7 +26,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html { color-scheme: dark; }
-body { overflow-x: clip; }
+html, body { overflow-x: clip; }
 
 body {
   margin: 0;
