@@ -1,11 +1,13 @@
-# Newest first. The homepage shows the first four.
-- date: "[Month year]"
-  text: "[Something that happened, e.g. a paper accepted or a talk given.]"
-  url: "#"
+# Newest first. The homepage shows the first three.
+- date: "2027"
+  text: "FRC Team 4481 will use COBI in the 2027 season."
+  url: /works/cobi/
+  link_label: About COBI
+- date: "November 2026"
+  text: "Trained a 257M-parameter GPT on 1.9B tokens of FineWeb, reaching a validation loss of 3.20."
+  url: /works/lm-fineweb/
+  link_label: lm-FineWeb
+- date: "November 2026"
+  text: "Released the latest version of the ConCoS paper on Zenodo. The first version went online in August 2026."
+  url: https://zenodo.org/records/24282231
   link_label: Paper
-- date: "[Month year]"
-  text: "[Something that happened.]"
-- date: "[Month year]"
-  text: "[Something that happened.]"
-- date: "[Month year]"
-  text: "[Something that happened.]"

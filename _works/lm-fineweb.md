@@ -18,3 +18,7 @@ lm-FineWeb trains a decoder-only transformer on FineWeb, a large dataset of filt
 - **SwiGLU** activations in the feed-forward layers
 - **Rotary position embeddings (RoPE)** to encode token positions
 - A **custom byte-pair encoding (BPE) tokenizer**, trained for this project
+
+## Results
+
+In November 2026, a 257M-parameter model trained on 1.9 billion tokens reached a validation loss of 3.20.
