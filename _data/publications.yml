@@ -1,9 +1,16 @@
-# Newest first.
+# Newest first. Each entry:
+#   title, authors (your name is highlighted automatically), venue, type, year
+#   summary: one or two sentences shown under the authors
+#   image:   optional square-ish figure, e.g. /assets/works/<name>/figure.png
+#   links:   any number of label / url pairs
+#   bibtex:  optional; shown behind a "Cite" toggle
 - title: "Learning Interpretable Generative Manifolds through Contrastive Cosine Similarity"
   authors: "Nick van Kemenade"
   venue: "Zenodo"
+  type: "Preprint"
   year: 2026
-  url: https://zenodo.org/records/24282231
+  summary: "Introduces Contrastive Cosine Similarity (ConCoS), a loss term for encoder-decoder models that organises latent space by angle while leaving magnitude free to encode variation within a class."
+  image: /assets/works/concos/scaling-grid.png
   links:
     - label: Paper
       url: https://zenodo.org/records/24282231
@@ -11,3 +18,12 @@
       url: https://github.com/nickvankemenade-ai/concos
     - label: Project page
       url: /works/concos/
+  bibtex: |
+    @misc{vankemenade2026concos,
+      title     = {Learning Interpretable Generative Manifolds through Contrastive Cosine Similarity},
+      author    = {van Kemenade, Nick},
+      year      = {2026},
+      publisher = {Zenodo},
+      doi       = {10.5281/zenodo.24282231},
+      url       = {https://zenodo.org/records/24282231}
+    }

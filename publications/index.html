@@ -1,17 +1,38 @@
 ---
 title: Publications
 ---
-<header class="page-head">
-  <h1>Publications</h1>
-</header>
+<section class="band band-page page-top">
+  <div class="band-head band-head-art art-sphere">
+    <header class="page-head">
+      <h1>Publications</h1>
+      <p class="lede">Papers and preprints, newest first.</p>
+    </header>
+  </div>
+</section>
 
-<ol class="pub-list">
+{% assign me = site.author.name %}
+{% capture me_bold %}<b>{{ me }}</b>{% endcapture %}
+<ul class="pub-list">
   {% for pub in site.data.publications %}
-  <li>
-    <p class="pub-title">{% if pub.url %}<a class="plain" href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</p>
-    <p class="muted">{{ pub.authors }}</p>
-    <p class="muted"><em>{{ pub.venue }}</em>, {{ pub.year }}</p>
-    {% include links.html links=pub.links %}
+  <li class="pub{% unless pub.image %} no-fig{% endunless %}">
+    {% if pub.image %}
+    <div class="pub-fig">
+      <img src="{{ pub.image | relative_url }}" alt="" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="pub-text">
+      <p class="pub-meta">{% if pub.type %}{{ pub.type }} · {% endif %}{{ pub.venue }} · {{ pub.year }}</p>
+      <h2 class="pub-title">{{ pub.title }}</h2>
+      <p class="pub-authors">{{ pub.authors | replace: me, me_bold }}</p>
+      {% if pub.summary %}<p class="pub-summary">{{ pub.summary }}</p>{% endif %}
+      {% include links.html links=pub.links %}
+      {% if pub.bibtex %}
+      <details class="pub-cite">
+        <summary>Cite</summary>
+        <pre><code>{{ pub.bibtex | escape }}</code></pre>
+      </details>
+      {% endif %}
+    </div>
   </li>
   {% endfor %}
-</ol>
+</ul>

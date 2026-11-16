@@ -21,7 +21,7 @@ Personal site, built by GitHub Pages with Jekyll. Push to `main` and it rebuilds
 | Top bar links | `_data/navigation.yml` |
 | Contact links (and which appear in the footer) | `_data/contact.yml` |
 | News (homepage shows the newest 4, `/news/` shows all) | `_data/news.yml` |
-| Publications | `_data/publications.yml` |
+| Publications (title, authors, venue, type, year, summary, image, links, BibTeX) | `_data/publications.yml` |
 | About text | `about/index.html` |
 | Colours and type | `assets/css/styles.css` (variables at the top) |
 | Homepage backgrounds (one is picked at random per visit) | `assets/img/hero/`, listed in the script in `index.html` |
