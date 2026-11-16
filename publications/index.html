@@ -17,7 +17,7 @@ title: Publications
   <li class="pub{% unless pub.image %} no-fig{% endunless %}">
     {% if pub.image %}
     <div class="pub-fig">
-      <img src="{{ pub.image | relative_url }}" alt="" loading="lazy">
+      <img src="{{ pub.image | relative_url }}" alt="" loading="{% if forloop.index <= 3 %}eager{% else %}lazy{% endif %}">
     </div>
     {% endif %}
     <div class="pub-text">

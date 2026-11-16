@@ -16,6 +16,7 @@ title: Works
 {% endcomment %}
 {% assign works = site.works | sort: 'date' | reverse %}
 {% assign by_year = works | group_by_exp: 'w', "w.date | date: '%Y'" %}
+{% assign shown = 0 %}
 <ol class="timeline">
   {% for year in by_year %}
   <li class="tl-year">
@@ -33,7 +34,8 @@ title: Works
           </div>
           {% if work.media and work.media.src and work.media.src != "" %}
           <a class="tl-thumb{% if work.media.dim %} dim{% endif %}" href="{{ work.url | relative_url }}" tabindex="-1" aria-hidden="true">
-            <img src="{{ work.media.src | relative_url }}" alt="" loading="lazy">
+            {% assign shown = shown | plus: 1 %}
+            <img src="{{ work.media.src | relative_url }}" alt="" loading="{% if shown <= 3 %}eager{% else %}lazy{% endif %}">
           </a>
           {% else %}
           <span class="tl-thumb empty" aria-hidden="true"></span>
