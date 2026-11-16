@@ -33,21 +33,36 @@ title: Home
   </div>
 </section>
 
+{% comment %}
+  Selected work: the three newest featured works in alternating rows.
+{% endcomment %}
 <section class="section">
-  <div class="section-head">
+  <div class="section-head section-head-big">
     <h2>Selected work</h2>
     <a href="{{ '/works/' | relative_url }}">All works</a>
   </div>
-  <ul class="work-list">
+  <ul class="zigzag">
     {% assign featured = site.works | where: 'featured', true | sort: 'date' | reverse %}
     {% for work in featured limit: 3 %}
-    <li class="work">
-      <div class="work-text">
+    {% assign has_media = false %}
+    {% if work.media and work.media.src and work.media.src != "" %}{% assign has_media = true %}{% endif %}
+    <li class="zz-row{% unless has_media %} no-media{% endunless %}">
+      {% if has_media %}
+      <a class="zz-fig{% if work.media.dim %} dim{% endif %}" href="{{ work.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        {% if work.media.type == "video" %}
+        <video src="{{ work.media.src | relative_url }}" autoplay muted loop playsinline></video>
+        {% else %}
+        <img src="{{ work.media.src | relative_url }}" alt="" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">
+        {% endif %}
+      </a>
+      {% endif %}
+      <div class="zz-text">
+        <p class="zz-when"><time datetime="{{ work.date | date: '%Y-%m' }}">{{ work.date | date: '%B %Y' }}</time></p>
         <h3><a href="{{ work.url | relative_url }}">{{ work.title }}</a></h3>
-        <p>{{ work.summary }}</p>
+        <p class="zz-summary">{{ work.summary }}</p>
         {% include links.html links=work.links %}
+        <a class="read-more" href="{{ work.url | relative_url }}">Read more<span class="visually-hidden"> about {{ work.title }}</span></a>
       </div>
-      {% include media.html media=work.media %}
     </li>
     {% endfor %}
   </ul>
@@ -61,12 +76,22 @@ title: Home
     </div>
   </div>
   <div class="band-body">
-    {% include news-list.html limit=4 %}
+    {% include news-list.html limit=3 %}
   </div>
 </section>
 
-<section class="section closing">
-  <h2>Get in touch</h2>
-  <p>I'm open to research collaborations and positions in machine learning.</p>
-  <a class="button button-light" href="{{ '/contact/' | relative_url }}">Contact</a>
+{% assign main_contact = site.data.contact | first %}
+<section class="cta-split">
+  <div class="cta-art" aria-hidden="true"></div>
+  <div>
+    <h2>Get in touch</h2>
+    <p>I'm open to research collaborations and positions in machine learning.</p>
+  </div>
+  <div>
+    <a class="cta-mail" href="{{ main_contact.url }}">{{ main_contact.handle }}</a>
+    <div class="cta-buttons">
+      <a class="button button-light" href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a class="button button-outline" href="{{ '/about/' | relative_url }}">About me</a>
+    </div>
+  </div>
 </section>
