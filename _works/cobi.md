@@ -14,6 +14,6 @@ COBI detects game pieces in real time from a robot's camera. It is optimised to 
 
 The current version is specialised for REBUILT, the 2026 FRC game.
 
-The figure shows how the network responds to a single camera frame, ending in the final detections with their confidence scores.
+The figure is from an old demo from 2025. It shows how the network responds to a single camera frame, ending in the final detections with their confidence scores.
 
 COBI is closed-source, so there is no paper or code to link.
