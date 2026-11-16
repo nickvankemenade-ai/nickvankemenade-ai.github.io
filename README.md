@@ -24,3 +24,4 @@ Personal site, built by GitHub Pages with Jekyll. Push to `main` and it rebuilds
 | Publications | `_data/publications.yml` |
 | About text | `about/index.html` |
 | Colours and type | `assets/css/styles.css` (variables at the top) |
+| Homepage backgrounds (one is picked at random per visit) | `assets/img/hero/`, listed in the script in `index.html` |

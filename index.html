@@ -3,7 +3,27 @@ title: Home
 ---
 <section class="intro intro-home">
   <div class="intro-art" aria-hidden="true">
-    <img src="{{ '/assets/img/hero-field.svg' | relative_url }}" alt="">
+    <img id="hero-art" alt="">
+    <script>
+      // A random background on every visit. `true` means it slowly rotates;
+      // the grid, attention and manifold backgrounds stay still.
+      (function () {
+        var options = [
+          ["clusters.svg", true],
+          ["network.svg", true],
+          ["flows.svg", true],
+          ["grid.svg", false],
+          ["sphere.svg", true],
+          ["attention.svg", false],
+          ["manifold.svg", false]
+        ];
+        var pick = options[Math.floor(Math.random() * options.length)];
+        var img = document.getElementById("hero-art");
+        if (!pick[1]) img.className = "still";
+        img.src = "{{ '/assets/img/hero/' | relative_url }}" + pick[0];
+      })();
+    </script>
+    <noscript><img src="{{ '/assets/img/hero/clusters.svg' | relative_url }}" alt=""></noscript>
   </div>
   <h1>Nick van Kemenade</h1>
   <p class="role">Machine Learning Researcher</p>
