@@ -1,12 +1,12 @@
 ---
 title: ConCoS
-date: 2026-11-16
+date: 2026-08-01
 featured: true
 summary: "A loss term for encoder-decoder models that separates latent vectors by direction and magnitude: direction encodes class, while magnitude stays free to encode variation within a class."
 media:
   type: image
   src: /assets/works/concos/scaling-grid.png
-  alt: "decoded digits across a grid of λ and γ values"
+  alt: "decoded digits for increasing ConCoS loss weight λ (rows) and radial scaling γ (columns)"
   fit: contain
 links:
   - label: Paper
@@ -24,7 +24,7 @@ bibtex: |
   }
 ---
 
-Paper: *Learning Interpretable Generative Manifolds through Contrastive Cosine Similarity* (2026).
+This page summarises the paper [*Learning Interpretable Generative Manifolds through Contrastive Cosine Similarity*](https://zenodo.org/records/24282231) (2026). The paper has the full method, experiments and results.
 
 ## Approach
 
@@ -34,7 +34,7 @@ Contrastive Cosine Similarity (ConCoS) trains latent vectors directly: vectors f
 
 Across twelve models trained on MNIST, Fashion-MNIST and EMNIST Letters, ConCoS models show much larger cosine gaps between classes. They also keep their classification accuracy better when latent vectors are scaled radially, and show more structural variation under that scaling.
 
-The figure shows decoded samples across a grid of values for λ (rows) and γ (columns).
+The figure shows decoded samples for increasing ConCoS loss weight λ (rows, where λ = 0 is the baseline without ConCoS) and increasing radial scaling γ of the latent vector (columns). See the paper for the full analysis.
 
 ## Next steps
 

@@ -8,7 +8,7 @@ Personal site, built by GitHub Pages with Jekyll. Push to `main` and it rebuilds
 2. Fill in the front matter:
    - `title`, `date` (sets the order and the year group on the works page), `summary`
    - `featured: true` to put it on the homepage. The homepage shows the three newest featured works.
-   - `media`: `type: image` or `type: video`, `src` (e.g. `/assets/works/<short-name>/figure.png`), and `alt`. Add `fit: contain` for figures that must not be cropped. Leave `src` empty for a placeholder, or remove `media` entirely.
+   - `media`: `type: image` or `type: video`, `src` (e.g. `/assets/works/<short-name>/figure.png`), and `alt`. Media is shown in a square frame. Add `fit: contain` for figures that must not be cropped, and `dim: true` to tone down a figure with a very light background. Leave `src` empty for a placeholder, or remove `media` entirely.
    - `links`: any number of `label` / `url` pairs (paper, code, Zenodo, ...).
    - `bibtex`: optional; shows a citation block on the work's page.
 3. Write the page body in Markdown below the front matter.

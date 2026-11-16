@@ -1,6 +1,6 @@
 ---
 title: Conditional and unconditional latent diffusion
-date: 2025-01-01
+date: 2025-10-01
 featured: true
 summary: "A latent diffusion model trained on CIFAR-10, used to compare how conditional and unconditional diffusion steps move through latent space."
 media:
@@ -8,6 +8,7 @@ media:
   src: /assets/works/latent-diffusion/trajectory-pca.svg
   alt: "diffusion trajectories in latent space projected onto two principal components, coloured by CIFAR-10 class"
   fit: contain
+  dim: true
 ---
 
 ## Overview
