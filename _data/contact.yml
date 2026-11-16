@@ -13,5 +13,5 @@
 - label: Zenodo
   handle: Nick_van_Kemenade
   url: "https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22van%20Kemenade%2C%20Nick%22&l=list&p=1&s=10&sort=bestmatch"
-  note: "Datasets, preprints and archived releases."
+  note: "Official publications."
   footer: true
