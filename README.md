@@ -23,5 +23,4 @@ Personal site, built by GitHub Pages with Jekyll. Push to `main` and it rebuilds
 | Homepage news | `_data/news.yml` |
 | Publications | `_data/publications.yml` |
 | About text | `about/index.html` |
-| CV | `assets/cv.pdf` |
 | Colours and type | `assets/css/styles.css` (variables at the top) |
