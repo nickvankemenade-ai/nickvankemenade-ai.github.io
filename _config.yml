@@ -8,15 +8,10 @@ author:
   name: Nick van Kemenade
 
 markdown: kramdown
-permalink: /notes/:year/:title/
 
 plugins:
-  - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-
-feed:
-  path: notes/feed.xml
 
 collections:
   works:
@@ -33,11 +28,6 @@ defaults:
       type: works
     values:
       layout: work
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
 
 exclude:
   - README.md

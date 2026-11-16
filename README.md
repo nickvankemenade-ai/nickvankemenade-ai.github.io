@@ -22,7 +22,6 @@ Personal site, built by GitHub Pages with Jekyll. Push to `main` and it rebuilds
 | Contact links (and which appear in the footer) | `_data/contact.yml` |
 | Homepage news | `_data/news.yml` |
 | Publications | `_data/publications.yml` |
-| About: timeline, skills | `_data/timeline.yml`, `_data/skills.yml` |
+| About text | `about/index.html` |
 | CV | `assets/cv.pdf` |
-| Notes | `_posts/YYYY-MM-DD-title.md` |
 | Colours and type | `assets/css/styles.css` (variables at the top) |

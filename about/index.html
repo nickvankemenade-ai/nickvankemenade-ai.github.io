@@ -5,42 +5,9 @@ title: About
   <h1>About</h1>
 </header>
 
-<div class="about">
-  <figure class="portrait">
-    <div class="placeholder">Image placeholder: a portrait photo</div>
-  </figure>
-  <div class="prose">
-    <p>[A paragraph about who you are and what you work on.]</p>
-    <p>[A paragraph about your background: where you studied, what led you to this field.]</p>
-    <p>[A paragraph about what you are looking for next, or what you do outside research.]</p>
-    <p><a href="{{ '/assets/cv.pdf' | relative_url }}">Download CV (PDF)</a></p>
-  </div>
+<div class="about prose">
+  <p>[A paragraph about who you are and what you work on.]</p>
+  <p>[A paragraph about your background: where you studied, what led you to this field.]</p>
+  <p>[A paragraph about what you are looking for next, or what you do outside research.]</p>
+  <p><a href="{{ '/assets/cv.pdf' | relative_url }}">Download CV (PDF)</a></p>
 </div>
-
-<section class="section">
-  <h2>Timeline</h2>
-  <ol class="timeline">
-    {% for item in site.data.timeline %}
-    <li>
-      <span class="muted">{{ item.period }}</span>
-      <div>
-        <p class="timeline-title">{{ item.title }}</p>
-        <p class="muted">{{ item.place }}</p>
-        {% if item.text %}<p>{{ item.text }}</p>{% endif %}
-      </div>
-    </li>
-    {% endfor %}
-  </ol>
-</section>
-
-<section class="section">
-  <h2>Skills and tools</h2>
-  <div class="columns">
-    {% for group in site.data.skills %}
-    <div>
-      <p class="timeline-title">{{ group.group }}</p>
-      <p class="muted">{{ group.items | join: ', ' }}</p>
-    </div>
-    {% endfor %}
-  </div>
-</section>

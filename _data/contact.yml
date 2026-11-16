@@ -15,15 +15,3 @@
   url: "#"
   note: "Datasets, preprints and archived releases."
   footer: true
-- label: LinkedIn
-  handle: "[your LinkedIn]"
-  url: "#"
-  note: "Work history and updates."
-- label: ORCID
-  handle: "[0000-0000-0000-0000]"
-  url: "#"
-  note: "Persistent researcher ID."
-- label: Google Scholar
-  handle: "[your Scholar profile]"
-  url: "#"
-  note: "Citations."
