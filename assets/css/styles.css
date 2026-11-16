@@ -295,17 +295,29 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
 .index-row p { margin: 0 0 12px; color: var(--text-body); line-height: 1.7; }
 
 .news-list { list-style: none; margin: 0; padding: 0; }
-.news-list li {
+.news-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 20px 0;
+  gap: 12px;
+  padding: 32px 0;
   border-top: 1px solid var(--border);
 }
-.news-list li:last-child { border-bottom: 1px solid var(--border); }
-.news-list .muted { font-size: 14px; }
-.news-page .news-list { max-width: 820px; }
-.news-list p { margin: 0; color: var(--text-body); }
+.news-item:last-child { border-bottom: 1px solid var(--border); }
+.news-item h3 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.news-date {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.news-date::before { content: "\2013\00a0"; color: var(--border); }
+.news-item p { margin: 0; max-width: 720px; color: var(--text-body); line-height: 1.7; }
+.news-list { max-width: 820px; }
 
 /* Article (work pages) */
 .article { padding-bottom: 96px; }

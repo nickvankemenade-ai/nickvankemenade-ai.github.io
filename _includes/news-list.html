@@ -2,9 +2,10 @@
 {% assign limit = include.limit | default: site.data.news.size %}
 <ul class="news-list">
   {% for item in site.data.news limit: limit %}
-  <li>
-    <span class="muted">{{ item.date }}</span>
-    <p>{{ item.text }}{% if item.url %} <a href="{{ item.url }}">{{ item.link_label | default: 'More' }}</a>{% endif %}</p>
+  <li class="news-item">
+    <h3>{{ item.title }} <span class="news-date">{{ item.date }}</span></h3>
+    <p>{{ item.text }}</p>
+    {% include links.html links=item.links %}
   </li>
   {% endfor %}
 </ul>

@@ -1,17 +1,35 @@
 # Newest first. The homepage shows the first four; /news/ shows all.
-- date: November 2026
-  text: "Released an updated version of the ConCoS paper."
-  url: https://zenodo.org/records/24282231
-  link_label: Paper
-- date: November 2026
-  text: "Trained a 257M-parameter GPT on 1.9B tokens of FineWeb, reaching a validation loss of 3.20."
-  url: /works/lm-fineweb/
-  link_label: Project
-- date: November 2026
-  text: "FRC team 4481 will use COBI in the 2027 season."
-  url: /works/cobi/
-  link_label: Project
-- date: August 2026
-  text: "Published the first version of ConCoS on Zenodo."
-  url: /works/concos/
-  link_label: Project
+# Each item: title, date, text (two or three lines), and optional links.
+- title: ConCoS paper updated
+  date: November 2026
+  text: "A revised version of the ConCoS paper is now on Zenodo, replacing the first version from August. ConCoS is a loss term for encoder-decoder models that separates latent vectors by direction and magnitude: direction encodes class, while magnitude encodes variation within a class."
+  links:
+    - label: Paper
+      url: https://zenodo.org/records/24282231
+    - label: Project
+      url: /works/concos/
+
+- title: A 257M-parameter GPT trained on FineWeb
+  date: November 2026
+  text: "As part of lm-FineWeb, I trained a 257M-parameter GPT-style model on 1.9 billion tokens of FineWeb, reaching a validation loss of 3.20. The model uses RMSNorm, SwiGLU, rotary position embeddings and a custom BPE tokenizer."
+  links:
+    - label: Project
+      url: /works/lm-fineweb/
+    - label: Code
+      url: https://github.com/nickvankemenade-ai/lm-FineWeb
+
+- title: COBI heads to FRC in 2027
+  date: November 2026
+  text: "FRC team 4481 will use COBI, my object detector for the Coral Edge TPU, during the 2027 FIRST Robotics Competition season. COBI detects game pieces in real time from the robot's camera."
+  links:
+    - label: Project
+      url: /works/cobi/
+
+- title: First version of ConCoS published
+  date: August 2026
+  text: "The first version of my paper, Learning Interpretable Generative Manifolds through Contrastive Cosine Similarity, is out on Zenodo. It introduces ConCoS, a contrastive loss that organises the latent space of encoder-decoder models by angle, so that classes are separated by direction."
+  links:
+    - label: Paper
+      url: https://zenodo.org/records/24282231
+    - label: Code
+      url: https://github.com/nickvankemenade-ai/concos
