@@ -21,13 +21,25 @@ I trained VAEs on CIFAR-10 in three ways: with [ConCoS](/works/concos/), with a 
 
 ## What stood out
 
-**ConCoS found its own superclasses.** With an image-like latent, ConCoS put all six animal classes on one direction and all four vehicles on the opposite one, without ever being told about animals or vehicles.
-
 **ConCoS reached its ideal geometry.** With a compact 64-number latent, the ten classes settled into ten evenly spread directions, at a cosine of −1/9 to each other.
 
-**Length is a safer style dial with ConCoS.** Scaling a latent should change how an image looks but keep its class. ConCoS latents kept their class more often than Euclidean ones (45% against 28% at half length, 49% against 38% at double length), and the image changed less.
+<figure class="wide">
+  <div class="plate">
+    <div><p>Euclidean only</p><img src="/assets/works/concos-ldm/umap-euclidean.webp" alt="UMAP of training latents of the Euclidean-only VAE, coloured by CIFAR-10 class" loading="lazy"></div>
+    <div><p>ConCoS</p><img src="/assets/works/concos-ldm/umap-concos.webp" alt="UMAP of training latents of the ConCoS VAE, coloured by CIFAR-10 class" loading="lazy"></div>
+  </div>
+  <ul class="legend"><li><i style="background:#347acc"></i>airplane</li><li><i style="background:#e16f43"></i>automobile</li><li><i style="background:#26ab7c"></i>bird</li><li><i style="background:#e8aa22"></i>cat</li><li><i style="background:#e47ea3"></i>deer</li><li><i style="background:#0a800b"></i>dog</li><li><i style="background:#6351cc"></i>frog</li><li><i style="background:#d9504f"></i>horse</li><li><i style="background:#18a8c0"></i>ship</li><li><i style="background:#9c5530"></i>truck</li></ul>
+  <figcaption>UMAP of 10,000 training latents for each VAE, coloured by class.</figcaption>
+</figure>
+
+**Length is a safer style dial with ConCoS.** Scaling a latent should change how an image looks but keep its class. ConCoS latents kept their class more often than Euclidean ones (45% against 28% at half length, 49% against 38% at double length).
+
+**ConCoS found its own superclasses.** With an image-like latent, ConCoS put all six animal classes on one direction and all four vehicles on the opposite one, without ever being told about animals or vehicles.
 
 <figure>
-  <img class="dim" src="/assets/works/concos-ldm/umap-train-test.webp" alt="UMAP plots of latents for the Euclidean-only VAE and the ConCoS plus Euclidean VAE, on train and test images, coloured by CIFAR-10 class." loading="lazy">
-  <figcaption>UMAP of 10,000 latents per panel, for the Euclidean-only VAE (top) and the ConCoS VAE (bottom), on train and test images.</figcaption>
+  <div class="plate one">
+    <div><p>ConCoS</p><img src="/assets/works/concos-ldm/paths-concos.webp" alt="class-conditional diffusion paths on the ConCoS VAE in PCA of the training latents, one per CIFAR-10 class" loading="lazy"></div>
+  </div>
+  <ul class="legend"><li><i style="background:#347acc"></i>airplane</li><li><i style="background:#e16f43"></i>automobile</li><li><i style="background:#26ab7c"></i>bird</li><li><i style="background:#e8aa22"></i>cat</li><li><i style="background:#e47ea3"></i>deer</li><li><i style="background:#0a800b"></i>dog</li><li><i style="background:#6351cc"></i>frog</li><li><i style="background:#d9504f"></i>horse</li><li><i style="background:#18a8c0"></i>ship</li><li><i style="background:#9c5530"></i>truck</li></ul>
+  <figcaption>Class-conditional diffusion paths on the ConCoS VAE, from one shared starting noise, one per class, in PCA of the training latents. Crosses mark where each path ends.</figcaption>
 </figure>
