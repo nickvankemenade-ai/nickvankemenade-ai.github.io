@@ -2,7 +2,7 @@
 title: ConCoS latent diffusion
 date: 2026-11-16
 featured: true
-summary: "Latent diffusion on CIFAR-10 with VAEs trained with ConCoS, with a Euclidean contrastive loss, or with neither, to test whether a class-shaped latent space helps image generation."
+summary: "Latent diffusion models on CIFAR-10, built on VAEs trained with ConCoS, with a Euclidean contrastive loss, or with neither."
 media:
   type: image
   src: /assets/works/concos-ldm/samples-concos-conditional.webp
@@ -15,37 +15,19 @@ links:
     url: https://zenodo.org/records/24282231
 ---
 
-## The question
+## What I did
 
-[ConCoS](/works/concos/) trains a VAE to store *what* an image is in the direction of its latent vector, and *how it looks* in its length. Latent diffusion trains an image generator in a VAE's latent space instead of on pixels. If class is a direction, a class-conditional diffusion model might find the right class more easily, need less guidance, and leave the length free as a style dial.
+I trained VAEs on CIFAR-10 in three ways: with [ConCoS](/works/concos/), with a Euclidean contrastive loss (same-class latents pulled close, other classes pushed past a minimum distance, so distance instead of angle), and with neither. On each VAE I trained an unconditional and a class-conditional latent diffusion model with classifier-free guidance: 5 VAEs and 10 diffusion models in total, on a laptop RTX 4060. The image above shows samples from the class-conditional model on the ConCoS VAE, one class per row.
 
-To test this, I trained VAEs on CIFAR-10 in three ways: with ConCoS, with a Euclidean contrastive loss (same-class latents pulled close, other classes pushed past a minimum distance, so distance instead of angle), and with neither. On each VAE I trained an unconditional and a class-conditional diffusion model with classifier-free guidance. In total: 5 VAEs and 10 diffusion models, about 7 GPU-hours on a laptop RTX 4060.
+## What stood out
 
-The work ran in two rounds:
+**ConCoS found its own superclasses.** With an image-like latent, ConCoS put all six animal classes on one direction and all four vehicles on the opposite one, without ever being told about animals or vehicles.
 
-- **Round 1** used an image-like latent (a 4×8×8 grid) and a 17M-parameter UNet.
-- **Round 2** used a compact 64-number latent, a 10M-parameter denoiser and a decoder without normalisation layers, and added Euclidean-only and ConCoS-only VAEs.
+**ConCoS reached its ideal geometry.** With a compact 64-number latent, the ten classes settled into ten evenly spread directions, at a cosine of −1/9 to each other.
 
-## What I found
-
-**ConCoS invented its own superclasses.** In round 1, ConCoS did not learn ten class directions. It put all six animal classes on one direction and all four vehicles on the exact opposite one, without ever being told about animals or vehicles. Unsupervised clustering matches the animal/vehicle split 92% of the time in the ConCoS latents, against 63% for the plain VAE.
-
-**It did not make diffusion better.** With the ConCoS VAE, image quality (FID) was worse at every guidance scale: 49.6 against 45.2 at guidance 3. With only 10 sampling steps the gap grew to 60.1 against 47.4. The samples above are still recognisable; they are just less varied and less sharp than the plain VAE's.
-
-**Clean clusters, partly memorised.** In round 2, ConCoS reached its ideal geometry: ten class directions spread evenly, at a cosine of −1/9 to each other. On training images that gives clean islands in a UMAP plot. On held-out test images the islands merge, and a linear classifier does no better than with the Euclidean VAE (62% against 63%).
+**Length is a safer style dial with ConCoS.** Scaling a latent should change how an image looks but keep its class. ConCoS latents kept their class more often than Euclidean ones (45% against 28% at half length, 49% against 38% at double length), and the image changed less.
 
 <figure>
-  <img class="dim" src="/assets/works/concos-ldm/umap-train-test.webp" alt="UMAP plots of latents for the Euclidean-only VAE and the ConCoS plus Euclidean VAE, on train and test images. ConCoS training latents form separate islands that merge on test images." loading="lazy">
-  <figcaption>UMAP of 10,000 latents per panel. Bottom left is the picture you would put on a poster; bottom right, on images the model has not seen, is the one that counts.</figcaption>
+  <img class="dim" src="/assets/works/concos-ldm/umap-train-test.webp" alt="UMAP plots of latents for the Euclidean-only VAE and the ConCoS plus Euclidean VAE, on train and test images, coloured by CIFAR-10 class." loading="lazy">
+  <figcaption>UMAP of 10,000 latents per panel, for the Euclidean-only VAE (top) and the ConCoS VAE (bottom), on train and test images.</figcaption>
 </figure>
-
-**Length is a safer dial with ConCoS.** Scaling a latent should change the style but keep the class. ConCoS latents keep their class more often than Euclidean ones: 45% against 28% at half length, 49% against 38% at double length, and the image changes less. Rotating a latent towards another class's direction worked equally often for both.
-
-## Takeaways
-
-- ConCoS does what it was designed for on the length of a latent: it is a safer style dial than a distance-based loss.
-- When ConCoS cannot fit every class, it falls back to the most natural grouping, which here was semantic.
-- A class-shaped latent space did not make latent diffusion better, and made fast sampling clearly worse.
-- Cluster plots of training latents can be memorisation. Check held-out data before trusting a UMAP.
-
-Each model was trained once, so small differences may be noise.

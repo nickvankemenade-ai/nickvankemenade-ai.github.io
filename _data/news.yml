@@ -2,7 +2,7 @@
 # Each item: title, date, text (two or three lines), and optional links.
 - title: ConCoS meets latent diffusion
   date: November 2026
-  text: "I trained latent diffusion models on CIFAR-10 on top of VAEs with ConCoS, with a Euclidean contrastive loss, or with neither. ConCoS made length a safer style dial, but a class-shaped latent space did not make generation better."
+  text: "I trained latent diffusion models on CIFAR-10 on top of VAEs with ConCoS, with a Euclidean contrastive loss, or with neither. ConCoS found its own animal and vehicle superclasses, and made the length of a latent a safer style dial."
   links:
     - label: Project
       url: /works/concos-ldm/
