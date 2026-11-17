@@ -533,6 +533,10 @@ html { scroll-padding-top: 96px; }
 .prose h3 { margin: 36px 0 12px; font-size: 24px; color: var(--text); }
 .prose p { margin: 0 0 20px; }
 .prose img { border-radius: 12px; margin: 32px 0; }
+.prose figure { margin: 40px 0; }
+.prose figure img { margin: 0; }
+.prose figcaption { margin-top: 12px; font-size: 15px; line-height: 1.6; color: var(--text-muted); }
+.prose img.dim { filter: brightness(0.82) saturate(0.95); }
 .prose blockquote { margin: 32px 0; padding-left: 24px; border-left: 2px solid var(--silver); color: var(--text); font-family: var(--serif); font-size: 22px; }
 .prose code { font-size: 0.9em; background: var(--surface); padding: 2px 6px; border-radius: 4px; }
 .prose pre code { padding: 0; background: none; }

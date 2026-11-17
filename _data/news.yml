@@ -1,5 +1,14 @@
-# Newest first. The homepage shows the first four; /news/ shows all.
+# Newest first. The homepage shows the first three; /news/ shows all.
 # Each item: title, date, text (two or three lines), and optional links.
+- title: ConCoS meets latent diffusion
+  date: November 2026
+  text: "I trained latent diffusion models on CIFAR-10 on top of VAEs with ConCoS, with a Euclidean contrastive loss, or with neither. ConCoS made length a safer style dial, but a class-shaped latent space did not make generation better."
+  links:
+    - label: Project
+      url: /works/concos-ldm/
+    - label: Code
+      url: https://github.com/nickvankemenade-ai/concos/tree/main/concos-LDM
+
 - title: ConCoS paper updated
   date: November 2026
   text: "A revised version of the ConCoS paper is now on Zenodo, replacing the first version from August. ConCoS is a loss term for encoder-decoder models that separates latent vectors by direction and magnitude: direction encodes class, while magnitude encodes variation within a class."
