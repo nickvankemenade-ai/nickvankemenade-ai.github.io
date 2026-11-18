@@ -32,10 +32,11 @@ title: Works
             <p>{{ work.summary }}</p>
             {% include links.html links=work.links %}
           </div>
-          {% if work.media and work.media.src and work.media.src != "" %}
+          {% assign thumb = work.thumb | default: work.media.src %}
+          {% if thumb and thumb != "" %}
           <a class="tl-thumb{% if work.media.dim %} dim{% endif %}" href="{{ work.url | relative_url }}" tabindex="-1" aria-hidden="true">
             {% assign shown = shown | plus: 1 %}
-            <img src="{{ work.media.src | relative_url }}" alt="" loading="{% if shown <= 3 %}eager{% else %}lazy{% endif %}">
+            <img src="{{ thumb | relative_url }}" alt="" loading="{% if shown <= 3 %}eager{% else %}lazy{% endif %}">
           </a>
           {% else %}
           <span class="tl-thumb empty" aria-hidden="true"></span>

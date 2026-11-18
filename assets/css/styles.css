@@ -546,6 +546,9 @@ html { scroll-padding-top: 96px; }
 .plate > div + div { border-left: 1px solid var(--border); }
 .plate p { margin: 0 0 6px; font-size: 14px; line-height: 1.5; color: var(--text-muted); }
 .prose .plate img { margin: 0; border-radius: 0; width: 100%; }
+.prose img.diagram { width: min(100%, 560px); border-radius: 0; }
+.pair { display: grid; gap: 24px; align-items: end; }
+.prose .pair img { margin: 0; border-radius: 0; width: 100%; }
 .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 14px 0 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.5; color: var(--text-muted); }
 .legend li { display: flex; align-items: center; gap: 7px; }
 .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; }
