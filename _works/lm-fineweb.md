@@ -1,6 +1,6 @@
 ---
 title: lm-FineWeb
-date: 2026-11-01
+date: 2026-10-01
 featured: false
 summary: "A GPT-style language model trained on FineWeb, with RMSNorm, SwiGLU, rotary position embeddings (RoPE) and a custom BPE tokenizer."
 thumb: /assets/works/lm-fineweb/thumb.webp
