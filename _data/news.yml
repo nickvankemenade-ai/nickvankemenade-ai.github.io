@@ -6,6 +6,8 @@
   links:
     - label: Project
       url: /works/tts-lj/
+    - label: Code
+      url: https://github.com/nickvankemenade-ai/tts-LJ
 
 - title: ConCoS meets latent diffusion
   date: November 2026

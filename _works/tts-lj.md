@@ -4,6 +4,9 @@ date: 2026-11-18
 featured: false
 summary: "A text-to-speech system trained from scratch on a laptop: a flow-matching model that turns text into a spectrogram, and a HiFi-GAN vocoder that turns the spectrogram into sound."
 thumb: /assets/works/tts-lj/card.webp
+links:
+  - label: Code
+    url: https://github.com/nickvankemenade-ai/tts-LJ
 ---
 
 ## Listen
