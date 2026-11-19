@@ -1,0 +1,13 @@
+{% comment %}
+  A spectrogram image with a play button and a playhead that moves over it while the audio plays.
+  Usage: {% include audio-sample.html image="/path.webp" audio="/path.mp3" duration="4.3" text="Spoken sentence" alt="..." %}
+  The playhead runs from 4% to 96% of the image width, the time axis of the tts-LJ figures.
+{% endcomment %}
+<figure class="wide sample">
+  <div class="sample-head">
+    <button class="play" type="button" aria-label="Play: {{ include.text }}"><svg class="tri" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5v11l9.5-5.5z"/></svg><svg class="pause" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5h3v11H3zM8 1.5h3v11H8z"/></svg></button>
+    <span class="sample-time">{{ include.duration }} s</span>
+  </div>
+  <div class="sample-plot"><img src="{{ include.image | relative_url }}" alt="{{ include.alt }}" loading="lazy"><span class="playhead"></span></div>
+  <audio src="{{ include.audio | relative_url }}" preload="metadata"></audio>
+</figure>
